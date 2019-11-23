@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href='main.css'>
+        <meta charset="utf-8"/>
+
+        <title>Cheat Sheet</title>
+    </head>
+    
+    <body class="card-panel grey lighten-2";>
+        <center>
+            <header class = 'header'>
+                <strong>
+                    <h1>Cheat Sheet</h1>
+                </strong>
+            </header>
+        <center>
+
+        <div class="card-panel deep-orange"; class="z-depth-4"; >
+            
+                <center>
+                    <a class="white-text">Caesar</a> |
+                    <a class="white-text">Somewhat</a> |
+                    <a class="white-text">Somewhat</a> |
+                    <a class="white-text">Somewhat</a> |
+                    <a class="white-text">Somewhat</a> |
+                    <a class="white-text">Somewhat</a>
+                </center>
+     
+        </div>
+
+        <div class="card-panel white lighten-2"; class="z-depth-4";>
+            <h3 class="black-text">Einführung</h3>
+            <p class="black-text">Die Caesar Verschlüsselung ist eine von den Römern etwickeltes System, die Nachrichten inhalte zu verschlüsseln.</p>
+            <h3 class="black-text">Funktion</h3>
+            <p class="black-text">Sie funktioniert mit dem Verschieben der Stellung im Alphabet.</p>
+
+            <div>
+                <div class="z-depth-4"; class="black-text"; id="log";></div>
+
+                <input type="text" name="lname"; style="margin-left: 8%; width: 50%; align-self: left: auto;;">
+
+                <button onclick="encrypt()"; class="waves-effect deep-orange btn" ; id="buttonencrypt">Verschlüsseln</button>
+            </div>
+
+            <script>
+                var hello = "wolrd";
+                function encrypt() {
+
+                    document.getElementById('log').innerHTML += '<div class="black-text"; style="margin-left: 5px;">Some new content!'+hello+'$hello</div>';
+                }
+            </script>
+            
+            <script>
+                function myFunction() {
+                    document.getElementById("frm1").submit();
+                }
+            </script>
+
+            <h3 class="black-text">Einführung</h3>
+            <p class="black-text">Die Caesar Verschlüsselung ist eine von den Römern etwickeltes System, die Nachrichten inhalte zu verschlüsseln.</p>
+            <h3 class="black-text">Funktion</h3>
+            <p class="black-text">Sie funktioniert mit dem Verschieben der Stellung im Alphabet.</p>
+            <h3 class="black-text">Einführung</h3>
+            <p class="black-text">Die Caesar Verschlüsselung ist eine von den Römern etwickeltes System, die Nachrichten inhalte zu verschlüsseln.</p>
+            <h3 class="black-text">Funktion</h3>
+            <p class="black-text">Sie funktioniert mit dem Verschieben der Stellung im Alphabet.</p>
+        </div>
+
+        <div class="card-panel deep-orange"; class="z-depth-4";>
+            <center>
+                <p class="white-text">Created by</p>
+                <p class="white-text">Copyright</p>
+            </center>
+        </div>
+    </body>
+</html>

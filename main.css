@@ -1,0 +1,78 @@
+@media screen and (min-width: 1500px) {
+    footer {
+        position: fixed; 
+        bottom: 0%; 
+        width: 85%; 
+        left: 7.5%;
+    }
+
+    div {
+        top: 15%; 
+        left:7.5%; 
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    footer { 
+        bottom: 0%; 
+        width: 85%; 
+        left: 7.5%;
+    }
+    
+    div{
+        left:7.5%; 
+        width: 85%;
+        color: white;
+    }
+}
+
+body {
+    background-color: lightgray;
+}
+
+#log {
+    height: 200px;
+    overflow: scroll;
+    overflow-x: hidden;
+    background-color: lightgray;
+
+    text-align: left;
+}
+
+#buttonencrypt {
+    margin-top: 10px;
+    position: right;
+    margin-left: 73%;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #ff5722; 
+    border-radius: 2px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ff5722; 
+}
+
+
+/*
+#log {
+    height:auto;
+    min-height:30px;
+    max-height: 300px;
+    height:auto !important;       
+    height:30px;
+    overflow: scroll;
+    scrollbar
+       
+    background-color: green;
+}
+*/
