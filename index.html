@@ -41,14 +41,15 @@
 
                 <input type="text" name="lname"; style="margin-left: 8%; width: 50%;">
 
-                <button onclick="encrypt('Hello World!', 12)"; class="waves-effect deep-orange btn" ; id="buttonencrypt">Verschlüsseln</button>
+                <button onclick="encrypt('hello', 12)"; class="waves-effect deep-orange btn" ; id="buttonencrypt">Verschlüsseln</button>
             </div>
 
             <script>
+
                 function encrypt(msg, key) 
                 {
-                    var encMsg = "";
-
+                    var encMsg = '';
+                    console.log('reached thos state');
                     for(var i = 0; i < msg.length; i++)
                     {
                         var code = msg.charCodeAt(i);
@@ -57,14 +58,13 @@
                         if (code >= 65 && code <= 65 + 26 - 1)
                         {
                             code -= 65;
-                            code = mod(code + key, 26);
+                            code = (code + key) % 26;
                             code += 65;
                         }
-
                         encMsg += String.fromCharCode(code);
-                    }
+                    } 
 
-                    document.getElementById('log').innerHTML += '<div class="black-text"; style="margin-left: 5px;">' + encmsg +'</div>'
+                    document.getElementById('log').innerHTML += `<div class="black-text"; style="margin-left: 5px;">` + encMsg + `</div>`
                 };
             </script>
 
