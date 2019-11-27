@@ -39,32 +39,50 @@
             <div>
                 <div class="z-depth-4"; class="black-text"; id="log";></div>
 
-                <input type="text" name="lname"; style="margin-left: 8%; width: 50%;">
+                <input type="text" name="lname"; style="margin-left: 8%; width: 50%;"; id="inputencrypt">
+                <input type="text" name="lname"; style="width: 10%;"; id="inputnumberencrypt">
 
-                <button onclick="encrypt('hello', 12)"; class="waves-effect deep-orange btn" ; id="buttonencrypt">Verschlüsseln</button>
+                <button onclick="encrypt()"; class="waves-effect deep-orange btn" ; id="buttonencrypt">Verschlüsseln</button>
             </div>
 
             <script>
 
-                function encrypt(msg, key) 
+                function encrypt() 
                 {
                     var encMsg = '';
-                    console.log('reached thos state');
-                    for(var i = 0; i < msg.length; i++)
-                    {
-                        var code = msg.charCodeAt(i);
 
-                        // Encrypt only letters in 'A' ... 'Z' interval
-                        if (code >= 65 && code <= 65 + 26 - 1)
+                    var msg = document.getElementById("inputencrypt").value;
+
+                    var key = document.getElementById("inputnumberencrypt").value;
+
+                    if(parseInt(key, 10) >= 0 && parseInt(key, 10) <= 26) {
+                        for(var i = 0; i < msg.length; i++)
                         {
-                            code -= 65;
-                            code = (code + key) % 26;
-                            code += 65;
-                        }
-                        encMsg += String.fromCharCode(code);
-                    } 
+                            var code = msg.charCodeAt(i);
 
-                    document.getElementById('log').innerHTML += `<div class="black-text"; style="margin-left: 5px;">` + encMsg + `</div>`
+                            // Encrypt only letters in 'A' ... 'Z' interval
+                            if (code >= 65 && code <= 65 + 26 - 1)
+                            {
+                                code -= 65;
+                                code = (code + key) % 26;
+                                code += 65;
+                            }
+                            else if(code >= 97 && code <= 97 + 26 - 1) 
+                            {
+                                code -= 97;
+                                code = (code + key) % 26;
+                                code += 97;
+                            }
+                            encMsg += String.fromCharCode(code);
+                        } 
+                        document.getElementById('log').innerHTML += `<div class="black-text"; style="margin-left: 5px;">Die Eingabe ist: ` + msg + `</div>`
+                        document.getElementById('log').innerHTML += `<div class="black-text"; style="margin-left: 5px;">Es wurde um so viele Stellen verschoben: ` + key + `</div>`
+                        document.getElementById('log').innerHTML += `<div class="black-text"; style="margin-left: 5px;"> Die verschlüsselte Ergebniss ist: ` + encMsg + `</div>`
+                    } 
+                    else
+                    {
+                        document.getElementById('log').innerHTML += `<div class="black-text"; style="margin-left: 5px;">Keine validen eingaben.</div>`
+                    }
                 };
             </script>
 
