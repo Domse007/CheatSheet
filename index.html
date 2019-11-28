@@ -63,15 +63,23 @@
                             // Encrypt only letters in 'A' ... 'Z' interval
                             if (code >= 65 && code <= 65 + 26 - 1)
                             {
-                                code -= 65;
-                                code = (code + key) % 26;
-                                code += 65;
+                                if(code + parseInt(key, 10) <= 90){
+                                    code = code + parseInt(key, 10);
+                                }
+                                else
+                                {
+                                    code = code + (parseInt(key, 10) - 26);
+                                }
                             }
                             else if(code >= 97 && code <= 97 + 26 - 1) 
                             {
-                                code -= 97;
-                                code = (code + key) % 26;
-                                code += 97;
+                                if(code + parseInt(key, 10) <= 122){
+                                    code = code + parseInt(key, 10);
+                                }
+                                else
+                                {
+                                    code = code + (parseInt(key, 10) - 26);
+                                }
                             }
                             encMsg += String.fromCharCode(code);
                         } 
