@@ -39,6 +39,14 @@ body {
 
     text-align: left;
 }
+#log2 {
+    height: 200px;
+    overflow: scroll;
+    overflow-x: hidden;
+    background-color: lightgray;
+
+    text-align: left;
+}
 
 #buttonencrypt {
     margin-top: 10px;

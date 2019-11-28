@@ -92,10 +92,64 @@
                         document.getElementById('log').innerHTML += `<div class="black-text"; style="margin-left: 5px;">Keine validen eingaben.</div>`
                     }
                 };
+
+                
+                function decrypt() 
+                {
+                    var msg = document.getElementById("inputdecrypt").value;
+
+                    for(key = 25; key >= 0; key--){
+                        var encMsg = '';
+                        if(parseInt(key, 10) >= 0 && parseInt(key, 10) <= 26) {
+                            for(var i = 0; i < msg.length; i++)
+                            {
+                                var code = msg.charCodeAt(i);
+
+                                // Encrypt only letters in 'A' ... 'Z' interval
+                                if (code >= 65 && code <= 65 + 26 - 1)
+                                {
+                                    if(code + parseInt(key, 10) <= 90){
+                                        code = code + parseInt(key, 10);
+                                    }
+                                    else
+                                    {
+                                        code = code + (parseInt(key, 10) - 26);
+                                    }
+                                }
+                                else if(code >= 97 && code <= 97 + 26 - 1) 
+                                {
+                                    if(code + parseInt(key, 10) <= 122){
+                                        code = code + parseInt(key, 10);
+                                    }
+                                    else
+                                    {
+                                        code = code + (parseInt(key, 10) - 26);
+                                    }
+                                }
+                                encMsg += String.fromCharCode(code);
+                            } 
+                            document.getElementById('log2').innerHTML += `<div class="black-text"; style="margin-left: 5px;">Verschiebung: ` + (26-key) + `; Ergebniss: ` + encMsg +`</div>`
+                        } 
+                        else
+                        {
+                            document.getElementById('log').innerHTML += `<div class="black-text"; style="margin-left: 5px;">Keine validen eingaben.</div>`
+                        }
+                    }
+                };
             </script>
 
-            <h3 class="black-text">Einführung</h3>
-            <p class="black-text">Die Caesar Verschlüsselung ist eine von den Römern etwickeltes System, die Nachrichten inhalte zu verschlüsseln.</p>
+            <h3 class="black-text">Sicher?</h3>
+            <p class="black-text">Leider ist die Caesar verschlüsselung nicht sehr sicher und kann spätestens nach 26 versuchen entschlüsselt.</p>
+
+            <div>
+                <div class="z-depth-4"; class="black-text"; id="log2";></div>
+
+                <input type="text" name="lname"; style="margin-left: 8%; width: 50%;"; id="inputdecrypt">
+
+                <button onclick="decrypt()"; class="waves-effect deep-orange btn" ; id="buttonencrypt">Entschlüsseln</button>
+            </div>
+
+
             <h3 class="black-text">Funktion</h3>
             <p class="black-text">Sie funktioniert mit dem Verschieben der Stellung im Alphabet.</p>
             <h3 class="black-text">Einführung</h3>
