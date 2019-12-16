@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href='main.css'>
+        <meta charset="utf-8"/>
+
+        <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+
+        <title>Cheat Sheet</title>
+    </head>
+
+    <body class="card-panel grey lighten-2";>
+        <center>
+            <header class = 'header'>
+                <strong>
+                    <h1>Cheat Sheet</h1>
+                </strong>
+            </header>
+        <center>
+
+        <div class="card-panel deep-orange"; class="z-depth-4"; >
+                <center>
+                    <a class="white-text"; href="index.html">Caesar</a> |
+                    <a class="white-text"; href="OneTimePads.html">One Time Pads</a> |
+                    <a class="white-text"; href="PublicKeyCryptography.html">Public Key Cryptography</a> |
+                    <a class="white-text"; href="Bitcoin.html">Bitcoin</a> |
+                    <a class="white-text"; href="code.html">Code erklärung</a>
+                </center>
+        </div>
+
+        <div class="card-panel white lighten-2"; class="z-depth-4";>
+            <h3 class="black-text">Wie kann man einem Framden ein Fahrrad verkaufen ohne ihn jemals zu sehen?</h3>
+            <p class="black-text">Man schliesst sein Fahrrad an einem neutralem Ort ab und geht weg. Anschliessend kommt die andere Person und schleisst das Velo zusätzlich mit seinem eigenen Schloss ab und geht wieder weg. Anschliessend geht der Verkäufer wieder zurüch und entfernt sein Schloss. So hat der Käufer sein Fahrrad nur noch durch sein eigenes Schloss verschlossen.</p>
+            <h3 class="black-text">Ist dies auch für die Kryptographie interessant?</h3>
+            <p class="black-text">Die Antwort lautet nein. Das Problem liegt darin, das wenn man eine Nachricht verschlüsselt, sie and die andere Person verschlüsselt, sie die Nachricht zusätzlich verschlüsselt und wieder zurüchschickt kann die "Man in the Middle"-Person den Key der zweiten Person herausfinden.</p>
+
+
+            <input type="text" name="lname"; style="margin-left: 8%; width: 50%;"; id="inputencrypt1">
+            <input type="text" name="lname"; style="width: 10%;"; id="inputnumberencrypt1">
+
+            <button onclick="bicycle()"; class="waves-effect deep-orange btn" ; id="buttonencrypt">Verschlüsseln</button>
+            <div class="z-depth-4"; class="black-text"; id="smalllog";></div>
+
+
+        </div>
+
+        <div class="card-panel deep-orange"; class="z-depth-4";>
+            <center>
+                <p class="white-text">Created by Arianita Nuhiu, Anja Kyra Meyner and Dominik Keller</p>
+                <p class="white-text">Copyright belongs to Arianita Nuhiu, Anja Kyra Meyner and Dominik Keller</p>
+                <a class="white-text"; href="https://github.com/Domse007/CheatSheet"><u>Github Repository</u></a>
+            </center>
+        </div>
+    </body>
+</html>
+
+<script>
+
+    function bicycle()
+    {
+        var msg = document.getElementById("inputencrypt1").value;
+        var key = document.getElementById("inputnumberencrypt1").value;
+
+        var ascii = "";
+        var ascii2 = 0;
+
+        for (i=1; i <= msg.length - 1; i++){
+            a = msg.charCodeAt(i);
+            ascii = ascii + a.toString();
+        }
+        ascii2 = Number(ascii)
+
+        ascii2 = ascii2 * key
+
+        document.getElementById('smalllog').innerHTML += `<div class="black-text"; style="margin-left: 5px;">` + ascii + ` * `+ key.toString()+ ` = ` + ascii2.toString()+ `</div>`
+    };
+
+
+      
+</script>

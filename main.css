@@ -48,6 +48,15 @@ body {
     text-align: left;
 }
 
+#smalllog {
+    height: 1.25em;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-color: lightgray;
+    color: black;
+    text-align: left;
+}
+
 #buttonencrypt {
     margin-top: 10px;
     position: right;
