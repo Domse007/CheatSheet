@@ -50,9 +50,45 @@
             <p class="black-text">Anschliessend verschlüsselt Person 2 die Nachricht zusätzlich meit seinem Schlüssel und schickt es wieder zurück an Person 1. Aber auch diese Nachricht wird von der Person in der Mitte abgefangen.</p>
             <p class="black-text">Jetzt ist die Nachricht ja schon übermittelt und man muss nur noch einen zweiten Key generieren.</p>
 
-            <input type="text" name="lname"; style="width: 10%;"; id="inputnumberencrypt2">
+            <input type="text" name="lname"; style="width: 60%; margin-left: 8%;"; id="inputnumberencrypt2">
             <button onclick="bicycle2()"; class="waves-effect deep-orange btn" ; id="buttonencrypt">2. Verschlüsseln</button>
             <div class="z-depth-4"; class="black-text"; id="smalllog2";></div>
+            
+            <br/>
+            <br/>   
+
+            <p class="black-text">Nun teilt die erste Person die doppelt verschlüsselte Nachricht durch den eigenen Schlüssel und schickt die einfach verschlüsselte Nachricht zurück an die 2. Person. Natürlich wird diese Nachricht auch von einem Mittelmann abgefangen.</p>
+            
+            <button onclick="bicycle4()"; style="margin-left: 68%; margin-bottom: 0.5%;" ; class="waves-effect deep-orange btn" ; id="buttonencrypt">Entschlüsseln</button>
+            <div class="z-depth-4"; class="black-text"; id="smalllog4";></div>
+
+                        
+            <br/>
+            <br/> 
+
+            <p class="black-text">Nun kommt der finale Schritt: Die zweite Person nimmt die erneut übermittelte Nachricht und teilt und es durch den eigenen Schlüssel. Somit bekommt die Person die Nachricht und sowohl der Schlüssel noch der unverschlüsselte Text übermittelt.</p>
+            <button onclick="bicycle5()"; style="margin-left: 68%; margin-bottom: 0.5%;" ; class="waves-effect deep-orange btn" ; id="buttonencrypt">Entschlüsseln</button>
+            <div class="z-depth-4"; class="black-text"; id="smalllog5";></div>
+
+                                    
+            <br/>
+            <br/> 
+
+            <h3 class="black-text">Und wieso ist dies nicht gut?</h3>
+            <p class="black-text">Jetzt hat aber die Person in der Mitte sowohl die einfachverschlüsselte Text, als auch den doppelt verschlüsselten Text. Wenn jetzt die Person in der Mitte den doppelt verschlüsselten Text, durch den einfachverschlüsselten Text teil, bekommt er den zweiten Schlüssel. Der Mittelmann kann aber noch nicht die finale Nachricht entschlüsseln, da er den ursprüngliche Verschlüsselung noch nicht kennt.</p>
+            
+            <button onclick="bicycle3()"; style="margin-left: 68%; margin-bottom: 0.5%;" ; class="waves-effect deep-orange btn" ; id="buttonencrypt">Entschlüsseln</button>
+            <div class="z-depth-4"; class="black-text"; id="smalllog3";></div>
+
+                                                
+            <br/>
+            <br/> 
+
+            <p class="black-text">Jetzt ist es ein leichtes, die Nachricht, die als letztes versendet wurde zu nehemn und durch den Schlüssel teilen.</p>
+            <button onclick="bicycle6()"; style="margin-left: 68%; margin-bottom: 0.5%;" ; class="waves-effect deep-orange btn" ; id="buttonencrypt">Entschlüsseln</button>
+            <div class="z-depth-4"; class="black-text"; id="smalllog6";></div>
+            <p class="black-text">Somit ist klar bewiesen, das diese Verschlüsslungsmethode wegfällt, da es ohne grossen Aufwand von einer unabhängigen Partei entschlüsselt werden kann.</p>
+
         </div>
 
         <div class="card-panel deep-orange"; class="z-depth-4";>
@@ -62,7 +98,7 @@
                 <a class="white-text"; href="https://github.com/Domse007/CheatSheet"><u>Github Repository</u></a>
             </center>
         </div>
-        
+
         <script>
             function bicycle()
             {     
@@ -81,7 +117,7 @@
         
                 ascii2 = ascii2 * key
         
-                document.getElementById('smalllog').innerHTML = `<div class="black-text"; style="margin-left: 5px;">` + ascii + ` * `+ key.toString()+ ` = ` + ascii2.toString()+ `</div><div class="black-text"; id="first";>` + ascii2.toString()+ `</div>`
+                document.getElementById('smalllog').innerHTML = `<div class="black-text"; style="margin-left: 5px;">` + ascii + ` * `+ key.toString()+ ` = ` + ascii2.toString()+ `</div><div class="black-text"; id="first";>` + ascii2.toString()+ `</div><div class="black-text"; id="key1";>` + key.toString() + `</div>`;
             };
         
             function bicycle2()
@@ -91,8 +127,49 @@
         
                 ascii4 = Number(ascii3) * Number(key2);
         
-                document.getElementById('smalllog2').innerHTML = `<div class="black-text"; style="margin-left: 5px;">` + ascii3.toString() + ` * `+ key2.toString()+ ` = ` + ascii4.toString()+ `</div>`;
+                document.getElementById('smalllog2').innerHTML = `<div class="black-text"; style="margin-left: 5px;">` + ascii3.toString() + ` * `+ key2.toString()+ ` = ` + ascii4.toString() + `</div><div class="black-text"; id="key2";>` + key2.toString() + `</div><div class="black-text"; id="second";>` + ascii4.toString() + `</div>`;
             };
+
+            function bicycle3()
+            {
+                var ascii3 = document.getElementById("first").textContent;
+                var ascii4 = document.getElementById("second").textContent;
+        
+                genkey = Number(ascii4) / Number(ascii3);
+        
+                document.getElementById('smalllog3').innerHTML = `<div class="black-text"; style="margin-left: 5px;">` + ascii4.toString() + ` / `+ ascii3.toString()+ ` = ` + genkey.toString()+ `</div><div class="black-text"; id="genkey";>` + genkey.toString() + `</div>`;
+            };
+
+            function bicycle4()
+            {
+                var ascii4 = document.getElementById("second").textContent;
+                var key1 = document.getElementById("key1").textContent;
+        
+                somewhat = Number(ascii4) / Number(key1);
+        
+                document.getElementById('smalllog4').innerHTML = `<div class="black-text"; style="margin-left: 5px;">` + ascii4.toString() + ` / `+ key1.toString()+ ` = ` + somewhat.toString()+ `</div><div class="black-text"; id="somewhat";>` + somewhat.toString() + `</div>`;
+            };
+
+            function bicycle5()
+            {
+                var somewhat = document.getElementById("somewhat").textContent;
+                var key2 = document.getElementById("key2").textContent;
+        
+                somewhat2 = Number(somewhat) / Number(key2);
+        
+                document.getElementById('smalllog5').innerHTML = `<div class="black-text"; style="margin-left: 5px;">` + somewhat.toString() + ` / `+ key2.toString()+ ` = ` + somewhat2.toString()+ `</div>`;
+            };
+
+            function bicycle6()
+            {
+                var ascii2 = document.getElementById("somewhat").textContent;
+                var genkey = document.getElementById("genkey").textContent;
+        
+                somewhat2 = Number(ascii2) / Number(genkey);
+        
+                document.getElementById('smalllog6').innerHTML = `<div class="black-text"; style="margin-left: 5px;">` + ascii2.toString() + ` / `+ genkey.toString()+ ` = ` + somewhat2.toString()+ `</div>`;
+            };
+        
         
               
         </script>
