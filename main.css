@@ -28,7 +28,7 @@
 }
 
 body {
-    background-color: lightgray;
+    background-color: #fff3e0;
 }
 
 #log {
@@ -69,13 +69,13 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #ff5722; 
+    background: #ff9800; 
     border-radius: 2px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #ff5722; 
+    background: #ff9800; 
 }
 
 

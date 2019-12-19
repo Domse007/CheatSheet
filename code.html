@@ -10,7 +10,7 @@
         <title>Cheat Sheet</title>
     </head>
     
-    <body class="card-panel grey lighten-2";>
+    <body>
         <center>
             <header class = 'header'>
                 <strong>
@@ -19,7 +19,7 @@
             </header>
         <center>
 
-        <div class="card-panel deep-orange"; class="z-depth-4"; >
+        <div class="card-panel orange"; class="z-depth-4"; >
                 <center>
                         <a class="white-text"; href="index.html">Caesar</a> |
                         <a class="white-text"; href="OneTimePads.html">One Time Pads</a> |
@@ -36,43 +36,43 @@
             <p class="black-text">Sie funktioniert mit dem Verschieben der Stellung im Alphabet.</p>
 
             <div class="z-depth-4"; class="black-text"; id="log";>
-                <code>
+                <code></code>
                 function encrypt() <br>
-                {
-                    var encMsg = '';
-
-                    var msg = document.getElementById("inputencrypt").value;
-
-                    var key = document.getElementById("inputnumberencrypt").value;
-
-                    if(parseInt(key, 10) >= 0 && parseInt(key, 10) <= 26) {
-                        for(var i = 0; i < msg.length; i++)
-                        {
-                            var code = msg.charCodeAt(i);
-
-                            // Encrypt only letters in 'A' ... 'Z' interval
-                            if (code >= 65 && code <= 65 + 26 - 1)
-                            {
-                                if(code + parseInt(key, 10) <= 90){
-                                    code = code + parseInt(key, 10);
-                                }
-                                else
-                                {
-                                    code = code + (parseInt(key, 10) - 26);
-                                }
-                            }
-                            else if(code >= 97 && code <= 97 + 26 - 1) 
-                            {
-                                if(code + parseInt(key, 10) <= 122){
-                                    code = code + parseInt(key, 10);
-                                }
-                                else
-                                {
-                                    code = code + (parseInt(key, 10) - 26);
-                                }
-                            }
-                            encMsg += String.fromCharCode(code);
-                        } 
+                {<br>
+                    var encMsg = '';<br>
+                    <br>
+                    var msg = document.getElementById("inputencrypt").value;<br>
+                    <br>
+                    var key = document.getElementById("inputnumberencrypt").value;<br>
+                    <br>
+                    if(parseInt(key, 10) >= 0 && parseInt(key, 10) <= 26) {<br>
+                        for(var i = 0; i < msg.length; i++)<br>
+                        {<br>
+                            var code = msg.charCodeAt(i);<br>
+                            <br>
+                            // Encrypt only letters in 'A' ... 'Z' interval<br>
+                            if (code >= 65 && code <= 65 + 26 - 1)<br>
+                            {<br>
+                                if(code + parseInt(key, 10) <= 90){<br>
+                                    code = code + parseInt(key, 10);<br>
+                                }<br>
+                                else<br>
+                                {<br>
+                                    code = code + (parseInt(key, 10) - 26);<br>
+                                }<br>
+                            }<br>
+                            else if(code >= 97 && code <= 97 + 26 - 1) <br>
+                            {<br>
+                                if(code + parseInt(key, 10) <= 122){<br>
+                                    code = code + parseInt(key, 10);<br>
+                                }<br>
+                                else<br>
+                                {<br>
+                                    code = code + (parseInt(key, 10) - 26);<br>
+                                }<br>
+                            }<br>
+                            encMsg += String.fromCharCode(code);<br>
+                        } <br>
                         document.getElementById('log').innerHTML += `<div class="black-text"; style="margin-left: 5px;">Die Eingabe ist: ` + msg + `</div>`
                         document.getElementById('log').innerHTML += `<div class="black-text"; style="margin-left: 5px;">Es wurde um so viele Stellen verschoben: ` + key + `</div>`
                         document.getElementById('log').innerHTML += `<div class="black-text"; style="margin-left: 5px;"> Die verschlüsselte Ergebniss ist: ` + encMsg + `</div>`
@@ -142,7 +142,7 @@
 
                 <input type="text" name="lname"; style="margin-left: 8%; width: 50%;"; id="inputdecrypt">
 
-                <button onclick="decrypt()"; class="waves-effect deep-orange btn" ; id="buttonencrypt">Entschlüsseln</button>
+                <button onclick="decrypt()"; class="waves-effect orange btn" ; id="buttonencrypt">Entschlüsseln</button>
             </div>
 
 
@@ -150,7 +150,7 @@
             <p class="black-text">Die entschlüsselung kann aber massiv beschleunigt werden, da es für jeden Buchstaben eine Häufigkeit hat, wie häufig er in einem Text vorkommt. Dies kann aber auch auf die verschlüsselte Version des Textes angewendet werden. So hat man bei längeren Texten eine sehr gute Wahrscheinlichkeit es beim ersten Versuch das ganze beim ersten Versuch lesbar zu entschlüsseln.</p>
         </div>
 
-        <div class="card-panel deep-orange"; class="z-depth-4";>
+        <div class="card-panel orange"; class="z-depth-4";>
             <center>
                 <p class="white-text">Created by Arianita Nuhiu, Anja Kyra Meyner and Dominik Keller</p>
                 <p class="white-text">Copyright belongs to Arianita Nuhiu, Anja Kyra Meyner and Dominik Keller</p>

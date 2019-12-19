@@ -13,7 +13,7 @@
         <title>Cheat Sheet</title>
     </head>
 
-    <body class="card-panel grey lighten-2";>
+    <body>
         <center>
             <header class = 'header'>
                 <strong>
@@ -22,15 +22,24 @@
             </header>
         <center>
 
-        <div class="card-panel deep-orange"; class="z-depth-4"; >
+            <div class="card-panel  orange"; class="z-depth-4"; >
                 <center>
-                    <a class="white-text"; href="index.html">Caesar</a> |
-                    <a class="white-text"; href="OneTimePads.html">One Time Pads</a> |
-                    <a class="white-text"; href="PublicKeyCryptography.html">Public Key Cryptography</a> |
-                    <a class="white-text"; href="Bitcoin.html">Bitcoin</a> |
-                    <a class="white-text"; href="code.html">Code erklärung</a>
+                    <a class="black-text"; href="index.html">Caesar</a> |
+                    <a class="black-text"; href="OneTimePads.html">One Time Pads</a> |
+                    <a class="black-text" style="background-color: white; border-radius: 5%;" href="PublicKeyCryptography.html">Public Key Cryptography</a> |
+                    <a class="black-text"; href="Bitcoin.html">Bitcoin</a> |
+                    <a class="black-text"; href="code.html">Code erklärung</a>
+                    <br/>
+                    <br/>
+                    <a class="black-text"; href="index.html">Fahrradproblem</a> |
+                    <a class="black-text"; href="OneTimePads.html">Modulare Arithmetik</a> |
+                    <a class="black-text"; href="PublicKeyCryptography.html">Intersse</a> |
+                    <a class="black-text"; href="Bitcoin.html">Diffie-Hellmann</a> |
+                    <a class="black-text"; href="code.html">El Gamal</a> |
+                    <a class="black-text">RSA</a>
                 </center>
         </div>
+        
 
         <div class="card-panel white lighten-2"; class="z-depth-4";>
             <h3 class="black-text">Wie kann man einem Fremden ein Fahrrad verkaufen ohne ihn jemals zu sehen?</h3>
@@ -42,7 +51,7 @@
 
             <input type="text" name="lname"; style="margin-left: 8%; width: 50%;"; id="inputencrypt1">
             <input type="text" name="lname"; style="width: 10%;"; id="inputnumberencrypt1">
-            <button onclick="bicycle()"; class="waves-effect deep-orange btn" ; id="buttonencrypt">Verschlüsseln</button>
+            <button onclick="bicycle()"; class="waves-effect orange btn" ; id="buttonencrypt">Verschlüsseln</button>
             <div class="z-depth-4"; class="black-text"; id="smalllog";></div>
 
             <br/>
@@ -54,7 +63,7 @@
             <p class="black-text">Jetzt ist die Nachricht ja schon übermittelt und man muss nur noch einen zweiten Key generieren.</p>
 
             <input type="text" name="lname"; style="width: 60%; margin-left: 8%;"; id="inputnumberencrypt2">
-            <button onclick="bicycle2()"; class="waves-effect deep-orange btn" ; id="buttonencrypt">2. Verschlüsseln</button>
+            <button onclick="bicycle2()"; class="waves-effect orange btn" ; id="buttonencrypt">2. Verschlüsseln</button>
             <div class="z-depth-4"; class="black-text"; id="smalllog2";></div>
             
             <br/>
@@ -62,7 +71,7 @@
 
             <p class="black-text">Nun teilt die erste Person die doppelt verschlüsselte Nachricht durch den eigenen Schlüssel und schickt die einfach verschlüsselte Nachricht zurück an die 2. Person. Natürlich wird diese Nachricht auch von einem Mittelmann abgefangen.</p>
             
-            <button onclick="bicycle4()"; style="margin-left: 68%; margin-bottom: 0.5%;" ; class="waves-effect deep-orange btn" ; id="buttonencrypt">Entschlüsseln</button>
+            <button onclick="bicycle4()"; style="margin-left: 68%; margin-bottom: 0.5%;" ; class="waves-effect orange btn" ; id="buttonencrypt">Entschlüsseln</button>
             <div class="z-depth-4"; class="black-text"; id="smalllog4";></div>
 
                         
@@ -70,7 +79,7 @@
             <br/> 
 
             <p class="black-text">Nun kommt der finale Schritt: Die zweite Person nimmt die erneut übermittelte Nachricht und teilt und es durch den eigenen Schlüssel. Somit bekommt die Person die Nachricht und sowohl der Schlüssel noch der unverschlüsselte Text übermittelt.</p>
-            <button onclick="bicycle5()"; style="margin-left: 68%; margin-bottom: 0.5%;" ; class="waves-effect deep-orange btn" ; id="buttonencrypt">Entschlüsseln</button>
+            <button onclick="bicycle5()"; style="margin-left: 68%; margin-bottom: 0.5%;" ; class="waves-effect orange btn" ; id="buttonencrypt">Entschlüsseln</button>
             <div class="z-depth-4"; class="black-text"; id="smalllog5";></div>
 
                                     
@@ -80,7 +89,7 @@
             <h3 class="black-text">Und wieso ist dies nicht gut?</h3>
             <p class="black-text">Jetzt hat aber die Person in der Mitte sowohl die einfachverschlüsselte Text, als auch den doppelt verschlüsselten Text. Wenn jetzt die Person in der Mitte den doppelt verschlüsselten Text, durch den einfachverschlüsselten Text teil, bekommt er den zweiten Schlüssel. Der Mittelmann kann aber noch nicht die finale Nachricht entschlüsseln, da er den ursprüngliche Verschlüsselung noch nicht kennt.</p>
             
-            <button onclick="bicycle3()"; style="margin-left: 68%; margin-bottom: 0.5%;" ; class="waves-effect deep-orange btn" ; id="buttonencrypt">Entschlüsseln</button>
+            <button onclick="bicycle3()"; style="margin-left: 68%; margin-bottom: 0.5%;" ; class="waves-effect orange btn" ; id="buttonencrypt">Entschlüsseln</button>
             <div class="z-depth-4"; class="black-text"; id="smalllog3";></div>
 
                                                 
@@ -88,8 +97,12 @@
             <br/> 
 
             <p class="black-text">Jetzt ist es ein leichtes, die Nachricht, die als letztes versendet wurde zu nehemn und durch den Schlüssel teilen.</p>
-            <button onclick="bicycle6()"; style="margin-left: 68%; margin-bottom: 0.5%;" ; class="waves-effect deep-orange btn" ; id="buttonencrypt">Entschlüsseln</button>
+            <button onclick="bicycle6()"; style="margin-left: 68%; margin-bottom: 0.5%;" ; class="waves-effect orange btn" ; id="buttonencrypt">Entschlüsseln</button>
             <div class="z-depth-4"; class="black-text"; id="smalllog6";></div>
+
+            <br/>
+            <br/>
+
             <p class="black-text">Somit ist klar bewiesen, das diese Verschlüsslungsmethode wegfällt, da es ohne grossen Aufwand von einer unabhängigen Partei entschlüsselt werden kann.</p>
 
             <br/>
@@ -105,7 +118,7 @@
             <p class="black-text"></p>
         </div>
 
-        <div class="card-panel deep-orange"; class="z-depth-4";>
+        <div class="card-panel orange"; class="z-depth-4";>
             <center>
                 <p class="white-text">Created by Arianita Nuhiu, Anja Kyra Meyner and Dominik Keller</p>
                 <p class="white-text">Copyright belongs to Arianita Nuhiu, Anja Kyra Meyner and Dominik Keller</p>
