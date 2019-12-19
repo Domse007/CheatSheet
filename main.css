@@ -48,6 +48,12 @@ body {
     text-align: left;
 }
 
+#logCode {
+    overflow-x: hidden;
+    background-color: lightgray;    
+    text-align: left;
+}
+
 #smalllog, #smalllog2, #smalllog3, #smalllog4, #smalllog5, #smalllog6{
     height: 1.25em;
     overflow-y: hidden;
