@@ -25,24 +25,25 @@
             <div class="card-panel  orange"; class="z-depth-4"; >
                 <center>
 
-                    <a class="white-text"; href="CheatSheet/index.html">Caesar</a> |
+                    <a class="white-text"; href="index.html">Caesar</a> |
                     <a class="white-text"; href="OneTimePads.html">One Time Pads</a> |
                     <a class="black-text"; style="background-color: white" href="PublicKeyCryptography.html">Public Key Cryptography</a> |
                     <a class="white-text"; href="Bitcoin.html">Bitcoin</a> |
                     <a class="white-text"; href="code.html">Code erklärung</a>
                     <br/>
                     <br/>
-                    <a class="white-text"; href="">Fahrradproblem</a> |
-                    <a class="white-text"; href="">Modulare Arithmetik</a> |
-                    <a class="white-text"; href="">Intersse</a> |
-                    <a class="white-text"; href="">Diffie-Hellmann</a> |
-                    <a class="white-text"; href="">El Gamal</a> |
-                    <a class="white-text">RSA</a>
+                    <a class="black-text"; style="background-color: white" href="PublicKeyCryptography.html">Fahrradproblem</a> |
+                    <a class="white-text"; href="modularArithmetics.html">Modulare Arithmetik</a> |
+                    <a class="white-text"; href="interests.html">Interesse</a> |
+                    <a class="white-text"; href="diffieHellmann.html">Diffie-Hellmann</a> |
+                    <a class="white-text"; href="elGamal.html">El Gamal</a> |
+                    <a class="white-text"; href="rsa.html">RSA</a>
                 </center>
         </div>
         
 
-        <div class="card-panel white lighten-2"; class="z-depth-4";>
+        <div class="card-panel white lighten-2 z-depth-4" id="bycicle">
+
             <h3 class="black-text">Wie kann man einem Fremden ein Fahrrad verkaufen ohne ihn jemals zu sehen?</h3>
             <p class="black-text">Man schliesst sein Fahrrad an einem neutralem Ort ab und geht weg. Anschliessend kommt die andere Person und schleisst das Velo zusätzlich mit seinem eigenen Schloss ab und geht wieder weg. Anschliessend geht der Verkäufer wieder zurüch und entfernt sein Schloss. So hat der Käufer sein Fahrrad nur noch durch sein eigenes Schloss verschlossen.</p>
             <h3 class="black-text">Ist dies auch für die Kryptographie interessant?</h3>
@@ -66,12 +67,12 @@
             <input type="text" name="lname"; style="width: 60%; margin-left: 8%;"; id="inputnumberencrypt2">
             <button onclick="bicycle2()"; class="waves-effect orange btn" ; id="buttonencrypt">2. Verschlüsseln</button>
             <div class="z-depth-4"; class="black-text"; id="smalllog2";></div>
-            
+
             <br/>
             <br/>   
 
             <p class="black-text">Nun teilt die erste Person die doppelt verschlüsselte Nachricht durch den eigenen Schlüssel und schickt die einfach verschlüsselte Nachricht zurück an die 2. Person. Natürlich wird diese Nachricht auch von einem Mittelmann abgefangen.</p>
-            
+
             <button onclick="bicycle4()"; style="margin-left: 68%; margin-bottom: 0.5%;" ; class="waves-effect orange btn" ; id="buttonencrypt">Entschlüsseln</button>
             <div class="z-depth-4"; class="black-text"; id="smalllog4";></div>
 
@@ -89,7 +90,7 @@
 
             <h3 class="black-text">Und wieso ist dies nicht gut?</h3>
             <p class="black-text">Jetzt hat aber die Person in der Mitte sowohl die einfachverschlüsselte Text, als auch den doppelt verschlüsselten Text. Wenn jetzt die Person in der Mitte den doppelt verschlüsselten Text, durch den einfachverschlüsselten Text teil, bekommt er den zweiten Schlüssel. Der Mittelmann kann aber noch nicht die finale Nachricht entschlüsseln, da er den ursprüngliche Verschlüsselung noch nicht kennt.</p>
-            
+
             <button onclick="bicycle3()"; style="margin-left: 68%; margin-bottom: 0.5%;" ; class="waves-effect orange btn" ; id="buttonencrypt">Entschlüsseln</button>
             <div class="z-depth-4"; class="black-text"; id="smalllog3";></div>
 
@@ -109,8 +110,9 @@
             <br/>
             <br/>
 
-            <h3 class="black-text">Was kann mn davon nutzen?</h3>
+            <h3 class="black-text">Was kann man davon nutzen?</h3>
             <p class="black-text">Die Verschlüsselung ist nun wie bewiesen nicht nützlich, aber kann man etwas daraus rausziehen, das man für eine neue Verschlüsselungsmethode weiterverwenden können? <br/> Ja, definitiv. Es hat sehr gute Ansätze, hautsächlich nähmlich das die Schlüssel immer bei der Person bleiben und nie übertragen werden muss. Aber wie funktioniert eine Verschlüsselung, die auf dem gleichen Prinzip funktioniert, aber nicht die Schlüssel ohne weiters freigibt?</p>
+
 
         </div>
 
