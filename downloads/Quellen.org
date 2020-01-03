@@ -1,0 +1,23 @@
+#+Title: Quellen
+#+Author: Arianita Nuhiu, Anja Kyra Meyner, Dominik Keller
+
+* Quellen
+** Bitcoin
+*** Welche Probleme löst die Blockchain
+[[https://cryptoticker.io/de/welches-problem-lost-blockchain/]]
+[[https://praxistipps.chip.de/peer-to-peer-was-ist-das_38408]]
+[[https://www.moneytoday.ch/lexikon/p2p-payment/]]
+[[https://blockruption.com/2018/06/welches-problem-lost-die-blockchain/]]
+[[https://moodle.iconic.ch/pluginfile.php/1841/mod_resource/content/2/Maturaarbeit__BlockchainDecrypted.pdf]]
+*** Hashfunktion
+[[https://www.elektronik-kompendium.de/sites/net/1909041.html]]
+[[https://moodle.iconic.ch/pluginfile.php/1841/mod_resource/content/2/Maturaarbeit__BlockchainDecrypted.pdf]]
+*** Wie funktioniert die Blockchain
+[[https://www.coinpro.ch/infografik-so-funktioniert-die-blockchain/]]
+[[https://www.fuw.ch/article/wie-funktioniert-die-blockchain/]]
+[[https://www.youtube.com/watch?v=4FU3tc-foaI]]
+[[https://moodle.iconic.ch/pluginfile.php/1841/mod_resource/content/2/Maturaarbeit__BlockchainDecrypted.pdf]]
+*** Smart contracts
+[[https://blockchainwelt.de/smart-contracts-vertrag-blockchain/]]
+[[https://blockgeeks.com/guides/smart-contracts/]]
+[[https://moodle.iconic.ch/pluginfile.php/1841/mod_resource/content/2/Maturaarbeit__BlockchainDecrypted.pdf]]
