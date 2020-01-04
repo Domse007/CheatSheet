@@ -1,0 +1,85 @@
+body {
+    background-color: #fff3e0;
+}
+
+#log {
+    height: 200px;
+    overflow: scroll;
+    overflow-x: hidden;
+    background-color: lightgray;
+
+    text-align: left;
+}
+#log2 {
+    height: 200px;
+    overflow: scroll;
+    overflow-x: hidden;
+    background-color: lightgray;
+
+    text-align: left;
+}
+
+#logCode {
+    overflow-x: hidden;
+    background-color: lightgray;    
+    text-align: left;
+}
+
+#smalllog, #smalllog2, #smalllog3, #smalllog4, #smalllog5, #smalllog6{
+    height: 1.25em;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-color: lightgray;
+    color: black;
+    text-align: left;
+}
+
+#buttonencrypt {
+    margin-top: 10px;
+    position: right;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #ff9800; 
+    border-radius: 2px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ff9800; 
+}
+
+
+/*
+#log {
+    height:auto;
+    min-height:30px;
+    max-height: 300px;
+    height:auto !important;       
+    height:30px;
+    overflow: scroll;
+    scrollbar
+       
+    background-color: green;
+}
+*/
+
+.tabs .tab a{
+    color: white;
+}
+.tabs .tab a:hover,.tabs .tab a.active {
+	background-color:transparent;
+	color:white;
+}
+.tabs .tab.disabled a,.tabs .tab.disabled a:hover {
+	color:rgba(255, 255, 255, 0.7);	
+}
+.tabs .indicator {
+	background-color:white;
+}

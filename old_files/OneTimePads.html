@@ -29,7 +29,7 @@
                 </center>
         </div>
 
-        <div class="card-panel white lighten-2"; class="z-depth-4";>
+        <div class="card-panel white lighten-2 z-depth-4" id="oneTimePads">
 
             <h3 class="black-text">Was sind One Time Pads?</h3>
             <p class="black-text">Es ist ein systematisches Verschlüsselungsverfahren zur geheimen Nachrichtenübermittlung. Es wird ein Schlüssel verwendet, dass so lang wie die Nachricht ist. Es gehört zu den polyalphabetischen Substitutionsverfahren, dass heisst ein Buchstabe (oder ein Zeichen) wird in einen anderen Buchstaben (oder Zeichen) umgewandelt.</p>
@@ -55,73 +55,65 @@
             <p class="black-text">Hier ein Beispiel dazu:<br>
             Angenommen ‘A’ verschlüsselt die Nachricht “BADEN” mit dem Key “FVOYY”. Code:</p>
 
-            <code class="black-text"; style="text-align: left;">
-            alphabet=”ABCDEFGHIJKLMNOPQRSTUVWXYZ”<br>
-            def add_letter(letter_key , letter_plain):<br>
-                new_letter_pos=alphabet.find(letter_key)+alphabet.find(letter_plain)<br>
-                if new_letter_pos>25:<br>
-                        new_letter_pos=new_letter_pos-26<br>
-                new_letter=alphabet[new_letter_pos]<br>
-                return new_letter<br>
-                <br>
-            def  add_strings(str_A , str_B):<br>
-                    result=””<br>
-                    for i in range(len(str_A)):<br>
-                            result=result+add_letter(str_A[i] , str_B[i])<br>
-                    return result<br>
-                    plaintext=”BADEN”<br>
-                    key=”FVOYY<br>
-                    add_strings(plaintext,key)<br>
-            </code>
-
+            <div class="z-depth-4"; class="black-text"; id="logCode";>
+                alphabet=”ABCDEFGHIJKLMNOPQRSTUVWXYZ”<br>
+                def add_letter(letter_key , letter_plain):<br>
+                    new_letter_pos=alphabet.find(letter_key)+alphabet.find(letter_plain)<br>
+                    if new_letter_pos>25:<br>
+                            new_letter_pos=new_letter_pos-26<br>
+                    new_letter=alphabet[new_letter_pos]<br>
+                    return new_letter<br>
+                    <br>
+                def  add_strings(str_A , str_B):<br>
+                        result=””<br>
+                        for i in range(len(str_A)):<br>
+                                result=result+add_letter(str_A[i] , str_B[i])<br>
+                        return result<br>
+                        plaintext=”BADEN”<br>
+                        key=”FVOYY<br>
+                        add_strings(plaintext,key)<br>
+            </div>
 
             <samp class="black-text">Output: >> ‘GVRCL’</samp>
 
-Die verschlüsselte Nachricht ‘GVRCL’ wird an Person ‘B’ geschickt, welcher den Schlüssel kennt und mit Python einfach entschlüsseln kann. Funktion:
- def  subtr_strings(str_A , str_B):
-         result=””
-         for i in range(len(str_A)):
-               result=result+subtr_letter(str_A[i] , str_B[i])
-         return result  
+            <p class="black-text">Die verschlüsselte Nachricht ‘GVRCL’ wird an Person ‘B’ geschickt, welcher den Schlüssel kennt und mit Python einfach entschlüsseln kann. Funktion:</p>
 
-cipher=”GVRCL”
-key=”OGDLS”
-subtr_strings(“cipher” , “key”)
+            <div class="z-depth-4"; class="black-text"; id="logCode";>
+                cipher=”GVRCL”<br>
+                key=”OGDLS”<br>
+                <br>
+                def  subtr_strings(str_A , str_B):<br>
+                    result=””<br>
+                    for i in range(len(str_A)):<br>
+                        result=result+subtr_letter(str_A[i] , str_B[i])<br>
+                    return result  <br>
+                subtr_strings(“cipher” , “key”)<br>
+            </div>
 
-Output: ‘BADEN’
-
-Die Nachricht wird aber von einer Drittperson abgefangen, die den Schlüssel jedoch nicht kennt. Um den Text zu entschlüsseln, entschlüsselt sie ihn mit jedem möglichen Schlüssel.
-Dabei gibt es 26hoch5= 11 881 376 mögliche Schlüssel, also gibt es auch genauso viele Lösungen. Es gibt mehrere Lösungen die Sinn ergeben. Da die Drittperson auch nicht Weiss auf welcher Sprache die Nachricht geschrieben wurde, gibt es nur noch mehr Sinnvolle Lösungen. Sie benutzt den selben Python-Code wie Bob:
-
-subtr_strings(“GVRCL” , “LNOYX”)
-Output: ‘VIDEO’
-subtr_strings(“GVRCL” , “VRZYY”)
-Output: ‘LESEN’
-
-Wie man sieht kann die Drittperson nicht wissen welche Lösung jetzt richtig ist und somit ist OTP sicher.
-
-• Give examples or code fragments to show that using the same key twice
-Wenn jetzt ‘A’ den gleichen Key ‘FVOYY’ nochmals verwendet, um zum Beispiel das Wort ‘SPORT’ zu verschlüsseln, kann die Drittperson die beiden Stings aneinanderhängen, bevor sie alle möglichen Schlüssel ausprobiert. Dadurch erhält sie weniger Lösungen die Sinn ergeben. Aus beiden Nachrichten kann also ein sinnvoller String entstehen, wodurch die Drittperson den Key finden kann und somit auch beide Nachrichten entschlüsseln kann. Die mehrfache Nutzung eines Schlüssels erlaubt also die vereinfachte Entschlüsselung-> nicht mehr sicher. 
+            <samp class="black-text">Output: >> ‘BADEN’</samp>
 
 
-            <h3 class="black-text"></h3>
-            <p class="black-text"></p>
-
-            <h3 class="black-text"></h3>
-            <p class="black-text"></p>
-
-            <h3 class="black-text"></h3>
-            <p class="black-text"></p>
-
-            <h3 class="black-text"></h3>
-            <p class="black-text"></p>
-            
+            <p class="black-text">Nachricht wird aber von einer Drittperson abgefangen, die den Schlüssel jedoch nicht kennt. Um den Text zu entschlüsseln, entschlüsselt sie ihn mit jedem möglichen Schlüssel.<br>
+            Dabei gibt es 26^5= 11 881 376 mögliche Schlüssel, also gibt es auch genauso viele Lösungen. Es gibt mehrere Lösungen die Sinn ergeben. Da die Drittperson auch nicht Weiss auf welcher Sprache die Nachricht geschrieben wurde, gibt es nur noch mehr Sinnvolle Lösungen. Sie benutzt den selben Python-Code wie Bob:</p>
 
 
+            <div class="z-depth-4"; class="black-text"; id="logCode";>
+                subtr_strings(“GVRCL” , “LNOYX”)
+            </div>
 
+            <samp class="black-text">Output: >> ‘VIDEO’</samp>
 
+            <div class="z-depth-4"; class="black-text"; id="logCode";>
+                subtr_strings(“GVRCL” , “VRZYY”)
+            </div>
 
-            
+            <samp class="black-text">Output: >> ‘LESEN’</samp>
+
+            <p class="black-text">Wie man sieht kann die Drittperson nicht wissen welche Lösung jetzt richtig ist und somit ist OTP sicher.</p>
+
+            <h3 class="black-text">Gib beispiele oder Codefragmente, um zu zeigen, weshalb es unsicher ist, den Key zwei mal zu verwenden</h3>
+
+            <p class="black-text">Wenn jetzt ‘A’ den gleichen Key ‘FVOYY’ nochmals verwendet, um zum Beispiel das Wort ‘SPORT’ zu verschlüsseln, kann die Drittperson die beiden Stings aneinanderhängen, bevor sie alle möglichen Schlüssel ausprobiert. Dadurch erhält sie weniger Lösungen die Sinn ergeben. Aus beiden Nachrichten kann also ein sinnvoller String entstehen, wodurch die Drittperson den Key finden kann und somit auch beide Nachrichten entschlüsseln kann. Die mehrfache Nutzung eines Schlüssels erlaubt also die vereinfachte Entschlüsselung-> nicht mehr sicher.</p>
         </div>
 
         <div class="card-panel orange"; class="z-depth-4";>
