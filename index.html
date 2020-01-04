@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
+   <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link rel="stylesheet" href='main.css'>
         <meta charset="utf-8"/>
@@ -8,160 +8,227 @@
         <link rel="icon" href="favicons/favicon.ico" type="image/x-icon"/>
 
         <title>Cheat Sheet</title>
-    </head>
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
+        <link rel = "stylesheet"
+            href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel = "stylesheet" 
+            href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+        <script type = "text/javascript"
+            src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+        </script> 
 
-    <body>
+        <script src="JavaScript/scripts.js"></script>
+        <script src="JavaScript/caesar.js"></script>
+   </head>
+   
+   <body class = "container"> 
+        
         <center>
             <header class = 'header'>
                 <strong>
                     <h1>Cheat Sheet</h1>
                 </strong>
             </header>
+        <center>
+
+
+        <div>
+            <div class = "orange z-depth-4">
+                <ul class = "tabs">
+                    <li class = "tab orange"><a class = "active" href = "#caesar" style="color: white;">Cäsar</a></li>
+                    <li class = "tab orange"><a href = "#modularArithmetics" style="color: white;">One Time Pads</a></li>
+                    <li class = "tab orange"><a href = "#publicKeyCryptography" style="color: white;">Public Key Cryptography</a></li>
+                    <li class = "tab orange"><a href = "#bitcoin" style="color: white;">Bitcoin</a></li>
+                </ul>
+            </div>
+
+            <div class="card-panel white lighten-2 z-depth-4"; id="caesar">
+                <h3 class="black-text">Einführung</h3>
+                <p class="black-text">Die Caesar Verschlüsselung ist eine von den Römern etwickeltes System, die Nachrichten inhalte zu verschlüsseln.</p>
+                <h3 class="black-text">Funktion</h3>
+                <p class="black-text">Sie funktioniert mit dem Verschieben der Stellung im Alphabet.</p>
+
+                <div>
+                    <div class="z-depth-4"; class="black-text"; id="log";></div>
+
+                    <input type="text" name="lname"; style="margin-left: 8%; width: 50%;"; id="inputencrypt">
+                    <input type="text" name="lname"; style="width: 10%;"; id="inputnumberencrypt">
+
+                    <button onclick="encrypt()"; class="waves-effect orange btn" ; id="buttonencrypt">Verschlüsseln</button>
+                </div>
+
+              
+
+                <h3 class="black-text">Sicher?</h3>
+                <p class="black-text">Leider ist die Caesar verschlüsselung nicht sehr sicher und kann spätestens nach 26 versuchen entschlüsselt.</p>
+
+                <div>
+                    <div class="z-depth-4"; class="black-text"; id="log2";></div>
+
+                    <input type="text" name="lname"; style="margin-left: 8%; width: 50%;"; id="inputdecrypt">
+
+                    <button onclick="decrypt()"; class="waves-effect orange btn" ; id="buttonencrypt">Entschlüsseln</button>
+                </div>
+
+
+                <h3 class="black-text">Beschleunigung</h3>
+                <p class="black-text">Die entschlüsselung kann aber massiv beschleunigt werden, da es für jeden Buchstaben eine Häufigkeit hat, wie häufig er in einem Text vorkommt. Dies kann aber auch auf die verschlüsselte Version des Textes angewendet werden. So hat man bei längeren Texten eine sehr gute Wahrscheinlichkeit es beim ersten Versuch das ganze beim ersten Versuch lesbar zu entschlüsseln.</p>
+            </div>
+
+
+            <div class = "z-depth-4" id="publicKeyCryptography"> 
+                <div class = "orange">
+                <ul class = "tabs">
+                    <li class = "tab orange"><a class = "active" href = "#bycicle" style="color: white;">Fahrradproblem</a></li>
+                    <li class = "tab orange"><a href = "#modularArithmetics" style="color: white;">Modulare Arithmetik</a></li>
+                    <li class = "tab orange"><a href = "#interests" style="color: white;">Interesse</a></li>
+                    <li class = "tab orange"><a href = "#diffieHellmann" style="color: white;">Diffie-Hellmann</a></li>
+                    <li class = "tab orange"><a href="#elGamal" style="color: white;">El Gamal</a></li>
+                    <li class = "tab orange"><a href="#rsa" style="color: white;">RSA</a></li>
+                </ul>
+                </div>
+                
+                <div class="card-panel white lighten-2 z-depth-4" id="bycicle">
+
+                    <h3 class="black-text">Wie kann man einem Fremden ein Fahrrad verkaufen ohne ihn jemals zu sehen?</h3>
+                    <p class="black-text">Man schliesst sein Fahrrad an einem neutralem Ort ab und geht weg. Anschliessend kommt die andere Person und schleisst das Velo zusätzlich mit seinem eigenen Schloss ab und geht wieder weg. Anschliessend geht der Verkäufer wieder zurüch und entfernt sein Schloss. So hat der Käufer sein Fahrrad nur noch durch sein eigenes Schloss verschlossen.</p>
+                    <h3 class="black-text">Ist dies auch für die Kryptographie interessant?</h3>
+                    <p class="black-text">Die Antwort lautet nein. Das Problem liegt darin, das wenn man eine Nachricht verschlüsselt, sie and die andere Person verschlüsselt, sie die Nachricht zusätzlich verschlüsselt und wieder zurüchschickt kann die "Man in the Middle"-Person den Key der zweiten Person herausfinden.</p>
+        
+                    <p class="black-text">Bitte gib eine einen String mit maximal 6 kleingeschriebene Zeichen länge.</p>
+        
+                    <input type="text" name="lname"; style="margin-left: 8%; width: 50%;"; id="inputencrypt1">
+                    <input type="text" name="lname"; style="width: 10%;"; id="inputnumberencrypt1">
+                    <button onclick="bicycle()"; class="waves-effect orange btn" ; id="buttonencrypt">Verschlüsseln</button>
+                    <div class="z-depth-4"; class="black-text"; id="smalllog";></div>
+        
+                    <br/>
+                    <br/>   
+        
+        
+                    <p class="black-text">Nun hat die erste Person die Nachricht verschlüsselt und reicht die Nachricht an die zwite Person weiter. Es gibt allerdings noch die Person in der Mitte, die auf keinen Umständen die Nachricht lesen sollte, aber sie fängt die erste Nachricht ab.</p>
+                    <p class="black-text">Anschliessend verschlüsselt Person 2 die Nachricht zusätzlich meit seinem Schlüssel und schickt es wieder zurück an Person 1. Aber auch diese Nachricht wird von der Person in der Mitte abgefangen.</p>
+                    <p class="black-text">Jetzt ist die Nachricht ja schon übermittelt und man muss nur noch einen zweiten Key generieren.</p>
+        
+                    <input type="text" name="lname"; style="width: 60%; margin-left: 8%;"; id="inputnumberencrypt2">
+                    <button onclick="bicycle2()"; class="waves-effect orange btn" ; id="buttonencrypt">2. Verschlüsseln</button>
+                    <div class="z-depth-4"; class="black-text"; id="smalllog2";></div>
+        
+                    <br/>
+                    <br/>   
+        
+                    <p class="black-text">Nun teilt die erste Person die doppelt verschlüsselte Nachricht durch den eigenen Schlüssel und schickt die einfach verschlüsselte Nachricht zurück an die 2. Person. Natürlich wird diese Nachricht auch von einem Mittelmann abgefangen.</p>
+        
+                    <button onclick="bicycle4()"; style="margin-left: 68%; margin-bottom: 0.5%;" ; class="waves-effect orange btn" ; id="buttonencrypt">Entschlüsseln</button>
+                    <div class="z-depth-4"; class="black-text"; id="smalllog4";></div>
+        
+                                
+                    <br/>
+                    <br/> 
+        
+                    <p class="black-text">Nun kommt der finale Schritt: Die zweite Person nimmt die erneut übermittelte Nachricht und teilt und es durch den eigenen Schlüssel. Somit bekommt die Person die Nachricht und sowohl der Schlüssel noch der unverschlüsselte Text übermittelt.</p>
+                    <button onclick="bicycle5()"; style="margin-left: 68%; margin-bottom: 0.5%;" ; class="waves-effect orange btn" ; id="buttonencrypt">Entschlüsseln</button>
+                    <div class="z-depth-4"; class="black-text"; id="smalllog5";></div>
+        
+                                            
+                    <br/>
+                    <br/> 
+        
+                    <h3 class="black-text">Und wieso ist dies nicht gut?</h3>
+                    <p class="black-text">Jetzt hat aber die Person in der Mitte sowohl die einfachverschlüsselte Text, als auch den doppelt verschlüsselten Text. Wenn jetzt die Person in der Mitte den doppelt verschlüsselten Text, durch den einfachverschlüsselten Text teil, bekommt er den zweiten Schlüssel. Der Mittelmann kann aber noch nicht die finale Nachricht entschlüsseln, da er den ursprüngliche Verschlüsselung noch nicht kennt.</p>
+        
+                    <button onclick="bicycle3()"; style="margin-left: 68%; margin-bottom: 0.5%;" ; class="waves-effect orange btn" ; id="buttonencrypt">Entschlüsseln</button>
+                    <div class="z-depth-4"; class="black-text"; id="smalllog3";></div>
+        
+                                                        
+                    <br/>
+                    <br/> 
+        
+                    <p class="black-text">Jetzt ist es ein leichtes, die Nachricht, die als letztes versendet wurde zu nehemn und durch den Schlüssel teilen.</p>
+                    <button onclick="bicycle6()"; style="margin-left: 68%; margin-bottom: 0.5%;" ; class="waves-effect orange btn" ; id="buttonencrypt">Entschlüsseln</button>
+                    <div class="z-depth-4"; class="black-text"; id="smalllog6";></div>
+        
+                    <br/>
+                    <br/>
+        
+                    <p class="black-text">Somit ist klar bewiesen, das diese Verschlüsslungsmethode wegfällt, da es ohne grossen Aufwand von einer unabhängigen Partei entschlüsselt werden kann.</p>
+        
+                    <br/>
+                    <br/>
+        
+                    <h3 class="black-text">Was kann man davon nutzen?</h3>
+                    <p class="black-text">Die Verschlüsselung ist nun wie bewiesen nicht nützlich, aber kann man etwas daraus rausziehen, das man für eine neue Verschlüsselungsmethode weiterverwenden können? <br/> Ja, definitiv. Es hat sehr gute Ansätze, hautsächlich nähmlich das die Schlüssel immer bei der Person bleiben und nie übertragen werden muss. Aber wie funktioniert eine Verschlüsselung, die auf dem gleichen Prinzip funktioniert, aber nicht die Schlüssel ohne weiters freigibt?</p>
+        
+        
+                </div>
+            </div> 
+
+
+            <div class="card-panel white lighten-2 z-depth-4" id="bitcoin">
+
+                <h3 class="black-text">Welches Problem löst die Blockchain?</h3>
+                <p class="black-text">Der Bitcoin, welche die erste Blockchain ist, wurde als digitales Geld entworfen. Da sie eine dezentrale Datenbank ist, kann sie in der Regel von jedem Netzwerkteilnehmer gespeichert werden. Zwischen den Teilnehmern im Netzwerk ermöglicht die Blockchain eine Peer-to-Peer-Zahlung.</p>
+                
+                <h3 class="black-text">Aber was ist Peer-to-Peer?</h3>
+                <p class="black-text">So werden Computernetzwerke bezeichnet, bei deren mehrere Computer miteinander verbunden sind und zusammenarbeiten können. Die Computer versorgen sich gegenseitig mit Dateien, Diensten und Funktionen. Die Computer können unterschiedlich aufgeteilt sein. Entweder können sie völlig gleichberechtigt oder in Gruppen mit unterschiedlichen Berechtigungen sein. So gibt es also keinen zentralen Server und ist somit ein dezentrales Netzwerk. Die Vorteile der dezentralen Netzwerke, also auch dem Peer-to-Peer-Netzwerk sind, dass sie weniger anfällig für Totalausfälle sind sowie ist es schwieriger, das Netzwerk durch externe Angriffe zu deaktivieren.</p>
+    
+                <img src="pictures/bitcoin1.png" style="width: 60%;">
+    
+                <p class="black-text">Die mobilen Zahlungen über das Smartphone sind also Peer-to-Peer-Zahlungen. Konkret geht es um den sofortigen Transfer meist kleinerer Beträge, von Privatperson zu Privatperson, von Handy zu Handy. Zum Beispiel innerhalb des Freundeskreises oder in der Familie.
+                Doch dies war bisher nicht möglich. Wenn sich Menschen gegenseitig nicht vertrauen, lassen sie sich wichtige Vereinbarungen von einer dritten Partei bestätigen. Als Beispiel dafür gilt das Banksystem. Bei einer Transaktion von A nach B, zieht die Bank den Betrag vom Konto von A ab und addiert ihn auf das Konto von B. Doch dies funktioniert nur, wenn die Beteiligten sich auf die Bank verlassen. Sobald die Bank in Konkurs geht oder gehackt wird, kann man sich nicht mehr darauf verlassen, dass bei den richtigen das Geld abgezogen und bei den richtigen das Geld addiert wird. 
+                Bei den Bitcoins jedoch, wenn sie Bitcoins und die privaten Schlüssel haben, ist das Kapital allein ihres. Für die Ausführung von Transaktionen sind spezielle Netzwerkknoten verantwortlich. Diese Aufgabe kann von jedem übernommen werden. Wenn einer dieser Knoten ausfällt und aus irgendwelchen Gründen eine Transaktion nicht ausführen kann, kann diese Aufgabe von jedem übernommen werden. 
+                So kann also die Blockchain mächtige Dritte eliminieren. Ein blindes Vertrauen ist unnötig und der Benutzer hat die volle Kontrolle. 
+                Diese vertrauens-unabhängige Darstellung des Eigentums kann nicht nur auf Geld angewendet werden. Über die Blockchain können so genannte Token übertragen werden. Ähnlich wie Aktien, die nur ein Stück Papier sind, aber einen Teil eines Unternehmens repräsentieren, können Token alles repräsentieren.</p>
+                
+                <h3 class="black-text">Was ist eine Hash-Funktion?</h3>
+                <p class="black-text">Hash-Funktionen sind ein wichtiges kryptographisches Instrument und bilden einen eigenen Bereich in der Kryptographie.
+                Eine Dualzahl aus einem als Vorabbild bezeichneten Datensatz wird im Prinzip durch eine Hash-Funktion erzeugt, welche üblicherweise in hexadezimaler Notation dargestellt wird. Dies wird als Hash-Wert bezeichnet. Wie lange diese generierte Zeichenkette dann ist, hängt allein von der Hashfunktion ab. 
+                Die Besonderheit einer kryptographischen Hash-Funktion ist die Einwegfunktion. Sie ist sehr einfach zu berechnen, allerdings ist die Umkehrung sehr komplex und grundsätzlich unmöglich. Dies kann auch wieder mit dem Fingerabdruck von einem Menschen verglichen werden. Das Aussehen eines Menschen ist nicht durch ihren Fingerabdruck ableitbar. Auch wenn zwei Menschen sich ähnlichsehen, können sie einen komplett anderen Fingerabdruck haben. Die Umkehrung vom Hash-Wert in das Originalbild soll verhindert werden. 
+                <img src="pictures/bitcoin2.png" style="width: 80%;"> <br>
+                Mit Hashfunktionen kann man effizient Daten miteinander vergleichen, genauso wie man zwei Menschen mit ihrem Fingerabdruck vergleichen kann.</p>
+                
+                <h3 class="black-text">Doch wie funktioniert die Blockchain?</h3>
+                <p class="black-text">In einem Block werden die Daten einer Transaktion (es muss sich dabei nicht um Geld handeln) zusammengefasst. Um zu verhindern, dass die gleichen Bitcoins zweimal ausgegeben werden, müssen die Computerserver im Netzwerk sich einigen, dass die Transaktion gültig ist. Nur wenn die Transaktion gültig ist wird ein neuer Block (Transaktionsblock der Kette) an Blöcke (also die Blockchain) angehängt. Sobald dieser Schritt gemacht wurde, kann er nicht mehr rückgängig gemacht werden.</p>
+    
+                <img src="pictures/bitcoin3.png" style="width: 40%;">
+    
+                <p class="black-text">Dies kann man mit einem Gruppenchat vergleichen;
+                Alice, Bob und Lisa haben sich zusammen um 14:00 Uhr im Park verabredet. Diese Information ist nun nach dem Absenden auf jedem Handy im Chat gespeichert. Wenn Lisa sich aber erst um 16:00 Uhr im Park treffen möchte, kann sie diese Entscheidung nicht allein treffen und sie kann auch nicht im Chat die Nachricht nachträglich ändern. Wenn Lisa das also nicht mit den anderen von vorne plant, steht sie um 16:00 Uhr allein im Park. Dies ist gleich mit den Blockchains. Der Kern der Blockchain ist, dass niemand nachträglich noch etwas bearbeiten kann. Den in der Blockchain werden auch Information in einem Verlauf gespeichert, welche dann je einen Block darstellt. Für jeden Block wird ein Hash, also sozusagen ein digitaler Fingerabdruck berechnet. Jeder Block erhält auch den Hash des vorherigen Blockes. Die Blöcke werden über die Hashes zu einer Kette verbunden. Da diese Hashes nicht rückgängig gemacht werden können, ist es ähnlich wie bei einem Chatverlauf, wo man die Informationen nachher nicht mehr verändern kann.</p>
+    
+                <p class="black-text">Würde sich jetzt jedoch eine Information/ Block verändern, würde sich auch der dazugehörige Hash verändern und die Kette/ Blockchain würde Zerfallen.</p>
+                
+                <h3 class="black-text">Was sind smart contracts?</h3>
+                <p class="black-text">Selbstausführende Verträge, welche auf Computerprotokollen aufbauen, werden smart contracts (intelligente Verträge) genannt. Sie sind auf der Blockchain-Technologie aufgebaut und sozusagen digitale Verträge. Die Bedingungen der Vereinbarung zwischen Käufer und Verkäufer dieser Verträge wird direkt in Codezeilen geschrieben, welche über ein verteiltes, dezentrales Netzwerk bestehen. Die smart contracts machen alle Transaktionen nachvollziehbar, irreversibel und transparent.</p>
+                <p class="black-text">Doch wie funktioniert diese smart contracts?</p>
+                <p class="black-text">Bei einem normalen Vertrag müssen beide Parteien mit dem Vertrag einverstanden sein. Wenn Bob also ein neues Auto kaufen will, stehen im Kaufvertrag alle Bedingungen, welchen Bob zustimmen muss, um das Auto zu kaufen. Jedoch muss auch der Autoverkäufer diesen Bedingungen zustimmen. Im Vertrag sind auch die Informationen enthalten, wieviel Bob für das Auto zahlen muss und was er dafür bekommt. Diese Verträge sind üblich nicht digital und werden schriftlich ausformuliert. 
+                Die smart contracts enthalten die gleichen Informationen wie die normalen Verträge, mit dem Unterschied, dass die Vertragsinformationen im Programmcode des smart contracts festgelegt werden. Der Grundsatz «Code is law» gilt dabei. Der Autoverkäufer kann also zum Beispiel durch ein solcher smart contract festlegen, dass Bob das Auto erhält, wenn er einen bestimmten Betrag bezahlt hat. Sie erhaten also sogenannte Wenn-Dann-Regeln. Wenn de Bedingung, welche im Vertrag festgelegt wurde, erfüllt wurde, löst dies automatisch Konsequenzen aus. Das bedeutet, dass festgelegte Aktivitäten, um die Willensbekundung des Vertrages zu verwirklicheen, automatisch ausgeführt werden, wenn ein gefordertes Ereignis eintritt. Auch werden bei alle Statusänderungen alle Parteien in Echtzeit darüber informiert. 
+                Einige Vorteile eines smart contracts sind also beispielsweise, dass sie sehr verlässlich sind, wenn sie korrekt programmiert wurden. Auch sind sie sehr sicher, wenn sie auf Basis einer Blockchain programmiert wurden. Sie benötigt auch weniger Zeit, so sparen die Vertragspartner an Zeit und Geld. Zur Verifikation eines Vertrages dient die unveränderliche Blockchain. Somit ist ein smart contract unabhängig und benötigt keine Dritt-Partei. 
+                Jedoch gibt es auch Nachteile, den vollständig ausgereift ist das Konzept der digitalen Verträge noch nicht. Wenn beispielsweise der Programmcode fehlerhaft ist, kann dies schwerwiegende Folgen haben, da die Blockchain unveränderlich ist. So konnte ein Hacker am 17. Juni 2016 50 Millionen US-Dollar erbeuten.</p>
+    
+                <img src="pictures/bitcoin5.png" style="width: 50%;"><br>
+    
+                <a href="downloads/Quellen.org" download target="_blank">
+                    Quellen herunterladen
+                </a>
+            </div>
+
+
+
+
+
+
+
+
+        </div>
+      
+                        
+        <div class="card-panel orange"; class="z-depth-4";>
             <center>
-
-                <div class="card-panel orange"; class="z-depth-4"; >
-                    <center>
-                            <a class="black-text"; style="background-color: white"; href="index.html">Caesar</a> |
-                            <a class="white-text"; href="OneTimePads.html">One Time Pads</a> |
-                            <a class="white-text"; href="PublicKeyCryptography.html">Public Key Cryptography</a> |
-                            <a class="white-text"; href="Bitcoin.html">Bitcoin</a> |
-                            <a class="white-text"; href="code.html">Code erklärung</a>
-                    </center>
-                </div>
-
-                <div class="card-panel white lighten-2"; class="z-depth-4";>
-                    <h3 class="black-text">Einführung</h3>
-                    <p class="black-text">Die Caesar Verschlüsselung ist eine von den Römern etwickeltes System, die Nachrichten inhalte zu verschlüsseln.</p>
-                    <h3 class="black-text">Funktion</h3>
-                    <p class="black-text">Sie funktioniert mit dem Verschieben der Stellung im Alphabet.</p>
-
-                    <div>
-                        <div class="z-depth-4"; class="black-text"; id="log";></div>
-
-                        <input type="text" name="lname"; style="margin-left: 8%; width: 50%;"; id="inputencrypt">
-                        <input type="text" name="lname"; style="width: 10%;"; id="inputnumberencrypt">
-
-                        <button onclick="encrypt()"; class="waves-effect orange btn" ; id="buttonencrypt">Verschlüsseln</button>
-                    </div>
-
-                  
-
-                    <h3 class="black-text">Sicher?</h3>
-                    <p class="black-text">Leider ist die Caesar verschlüsselung nicht sehr sicher und kann spätestens nach 26 versuchen entschlüsselt.</p>
-
-                    <div>
-                        <div class="z-depth-4"; class="black-text"; id="log2";></div>
-
-                        <input type="text" name="lname"; style="margin-left: 8%; width: 50%;"; id="inputdecrypt">
-
-                        <button onclick="decrypt()"; class="waves-effect orange btn" ; id="buttonencrypt">Entschlüsseln</button>
-                    </div>
-
-
-                    <h3 class="black-text">Beschleunigung</h3>
-                    <p class="black-text">Die entschlüsselung kann aber massiv beschleunigt werden, da es für jeden Buchstaben eine Häufigkeit hat, wie häufig er in einem Text vorkommt. Dies kann aber auch auf die verschlüsselte Version des Textes angewendet werden. So hat man bei längeren Texten eine sehr gute Wahrscheinlichkeit es beim ersten Versuch das ganze beim ersten Versuch lesbar zu entschlüsseln.</p>
-                </div>
-
-                <div class="card-panel orange"; class="z-depth-4";>
-                    <center>
-                        <p class="white-text">Created by Arianita Nuhiu, Anja Kyra Meyner and Dominik Keller</p>
-                        <p class="white-text">Copyright belongs to Arianita Nuhiu, Anja Kyra Meyner and Dominik Keller</p>
-                        <a class="white-text"; href="https://github.com/Domse007/CheatSheet"><u>Github Repository</u></a>
-                    </center>
-                </div>
-    </body>
+                <p class="white-text">Created by Arianita Nuhiu, Anja Kyra Meyner and Dominik Keller</p>
+                <p class="white-text">Copyright belongs to Arianita Nuhiu, Anja Kyra Meyner and Dominik Keller</p>
+                <a class="white-text"; href="https://github.com/Domse007/CheatSheet"><u>Github Repository</u></a>
+            </center>
+        </div>
+   </body>
 </html>
-
-
-<script>
-
-        function encrypt()
-        {
-            var encMsg = '';
-
-            var msg = document.getElementById("inputencrypt").value;
-
-            var key = document.getElementById("inputnumberencrypt").value;
-
-            if(parseInt(key, 10) >= 0 && parseInt(key, 10) <= 26) {
-                for(var i = 0; i < msg.length; i++)
-                {
-                    var code = msg.charCodeAt(i);
-
-                    // Encrypt only letters in 'A' ... 'Z' interval
-                    if (code >= 65 && code <= 65 + 26 - 1)
-                    {
-                        if(code + parseInt(key, 10) <= 90){
-                            code = code + parseInt(key, 10);
-                        }
-                        else
-                        {
-                            code = code + (parseInt(key, 10) - 26);
-                        }
-                    }
-                    else if(code >= 97 && code <= 97 + 26 - 1)
-                    {
-                        if(code + parseInt(key, 10) <= 122){
-                            code = code + parseInt(key, 10);
-                        }
-                        else
-                        {
-                            code = code + (parseInt(key, 10) - 26);
-                        }
-                    }
-                    encMsg += String.fromCharCode(code);
-                }
-                document.getElementById('log').innerHTML += `<div class="black-text"; style="margin-left: 5px;">Die Eingabe ist: ` + msg + `</div>`
-                document.getElementById('log').innerHTML += `<div class="black-text"; style="margin-left: 5px;">Es wurde um so viele Stellen verschoben: ` + key + `</div>`
-                document.getElementById('log').innerHTML += `<div class="black-text"; style="margin-left: 5px;"> Die verschlüsselte Ergebniss ist: ` + encMsg + `</div>`
-            }
-            else
-            {
-                document.getElementById('log').innerHTML += `<div class="black-text"; style="margin-left: 5px;">Keine validen eingaben.</div>`
-            }
-        };
-
-
-        function decrypt()
-        {
-            var msg = document.getElementById("inputdecrypt").value;
-
-            for(key = 25; key >= 0; key--){
-                var encMsg = '';
-                if(parseInt(key, 10) >= 0 && parseInt(key, 10) <= 26) {
-                    for(var i = 0; i < msg.length; i++)
-                    {
-                        var code = msg.charCodeAt(i);
-
-                        // Encrypt only letters in 'A' ... 'Z' interval
-                        if (code >= 65 && code <= 65 + 26 - 1)
-                        {
-                            if(code + parseInt(key, 10) <= 90){
-                                code = code + parseInt(key, 10);
-                            }
-                            else
-                            {
-                                code = code + (parseInt(key, 10) - 26);
-                            }
-                        }
-                        else if(code >= 97 && code <= 97 + 26 - 1)
-                        {
-                            if(code + parseInt(key, 10) <= 122){
-                                code = code + parseInt(key, 10);
-                            }
-                            else
-                            {
-                                code = code + (parseInt(key, 10) - 26);
-                            }
-                        }
-                        encMsg += String.fromCharCode(code);
-                    }
-                    document.getElementById('log2').innerHTML += `<div class="black-text"; style="margin-left: 5px;">Verschiebung: ` + (26-key) + `; Ergebniss: ` + encMsg +`</div>`
-                }
-                else
-                {
-                    document.getElementById('log').innerHTML += `<div class="black-text"; style="margin-left: 5px;">Keine validen eingaben.</div>`
-                }
-            }
-        };
-       </script>
