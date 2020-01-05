@@ -45,3 +45,13 @@ Der Generator ist die Zahl die deren alle Reste von Modulo abdecken.
 * Wie Funktioniert die El Gamal verschlüsselung
 
 * Wieso ist RSA einfacher?
+
+
+|                    | Alice   | Eve         | Bob     | Inventar Alice     | Inventar Eve   | Inventar Bob             |
+|--------------------+---------+-------------+---------+--------------------+----------------+--------------------------|
+| publik uebertragen | g,p     | --- g,p --> | g,p     | g, p               | g, p           | g, p                     |
+| privat generiert   | a       |             | b       | g, p, a            | g, p           | g, p, b                  |
+| berechnen          | g^a     |             | g^b     | g, p, a / g^a      | g, p           | g, p, b / g^b            |
+| publik uebertragen | g^a     | --- g^a --> | g^a     | g, p, a / g^a      | g, p, g^a      | g, p, a, g^a / g^b       |
+| publik uebertragen | g^b     | <-- g^b --- | g^b     | g, p, a, g^b / g^a | g, p, g^a, g^b | g, p, a, g^a / g^b       |
+| berechnen          | (g^b)^a |             | (g^a)^b | g, p, a, g^b, g^ba | g, p, g^a, g^b | g, p, a, g^a, g^ab / g^b |

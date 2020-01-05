@@ -196,7 +196,6 @@
                 <ul class = "tabs">
                     <li class = "tab orange"><a class = "active" href = "#bycicle" style="color: white;">Fahrradproblem</a></li>
                     <li class = "tab orange"><a href = "#modulareArithmetik" style="color: white;">Modulare Arithmetik</a></li>
-                    <li class = "tab orange"><a href = "#interests" style="color: white;">Interesse</a></li>
                     <li class = "tab orange"><a href = "#diffieHellmann" style="color: white;">Diffie-Hellmann</a></li>
                     <li class = "tab orange"><a href="#elGamal" style="color: white;">El Gamal</a></li>
                     <li class = "tab orange"><a href="#rsa" style="color: white;">RSA</a></li>
@@ -296,8 +295,88 @@
                     <p class="black-text">Der Generator ist die Zahl die deren alle Reste von Modulo abdecken.</p>                
                 </div>
 
-                <div class="card-panel white lighten-2 z-depth-4" id="interesse"></div>
+                <div class="card-panel white lighten-2 z-depth-4" id="diffieHellmann">
 
+                    <p class="black-text">Die Erzeugung des gemeinsamen Keys ist in der folgenden Tabelle schematisch dargestellt.</p>
+
+                    <table cellspacing="0" cellpadding="6" rules="groups" frame="hsides" style="background-color: white;">
+                        <colgroup>
+                            <col  class="org-left" />
+                            <col  class="org-left" />
+                            <col  class="org-left" />
+                            <col  class="org-left" />
+                            <col  class="org-left" />
+                            <col  class="org-left" />
+                            <col  class="org-left" />
+                        </colgroup>
+                            <thead>
+                            <tr>
+                                <th scope="col" class="org-left">&#xa0;</th>
+                                <th scope="col" class="org-left">Alice</th>
+                                <th scope="col" class="org-left">Eve</th>
+                                <th scope="col" class="org-left">Bob</th>
+                                <th scope="col" class="org-left">Inventar Alice</th>
+                                <th scope="col" class="org-left">Inventar Eve</th>
+                                <th scope="col" class="org-left">Inventar Bob</th>
+                            </tr>
+                            </thead>
+                        <tbody>
+                            <tr>
+                                <td class="org-left">publik uebertragen</td>
+                                <td class="org-left">g,p</td>
+                                <td class="org-left">&#x2014; g,p &#x2013;&gt;</td>
+                                <td class="org-left">g,p</td>
+                                <td class="org-left">g, p</td>
+                                <td class="org-left">g, p</td>
+                                <td class="org-left">g, p</td>
+                            </tr>
+                            <tr>
+                                <td class="org-left">privat generiert</td>
+                                <td class="org-left">a</td>
+                                <td class="org-left">&#xa0;</td>
+                                <td class="org-left">b</td>
+                                <td class="org-left">g, p, a</td>
+                                <td class="org-left">g, p</td>
+                                <td class="org-left">g, p, b</td>
+                            </tr>
+                            <tr>
+                                <td class="org-left">berechnen</td>
+                                <td class="org-left">g<sup>a</sup></td>
+                                <td class="org-left">&#xa0;</td>
+                                <td class="org-left">g<sup>b</sup></td>
+                                <td class="org-left">g, p, a / g<sup>a</sup></td>
+                                <td class="org-left">g, p</td>
+                                <td class="org-left">g, p, b / g<sup>b</sup></td>
+                            </tr>
+                            <tr>
+                                <td class="org-left">publik uebertragen</td>
+                                <td class="org-left">g<sup>a</sup></td>
+                                <td class="org-left">&#x2014; g<sup>a</sup> &#x2013;&gt;</td>
+                                <td class="org-left">g<sup>a</sup></td>
+                                <td class="org-left">g, p, a / g<sup>a</sup></td>
+                                <td class="org-left">g, p, g<sup>a</sup></td>
+                                <td class="org-left">g, p, a, g<sup>a</sup> / g<sup>b</sup></td>
+                            </tr>
+                            <tr>
+                                <td class="org-left">publik uebertragen</td>
+                                <td class="org-left">g<sup>b</sup></td>
+                                <td class="org-left">&lt;&#x2013; g<sup>b</sup> ---</td>
+                                <td class="org-left">g<sup>b</sup></td>
+                                <td class="org-left">g, p, a, g<sup>b</sup> / g<sup>a</sup></td>
+                                <td class="org-left">g, p, g<sup>a</sup>, g<sup>b</sup></td>
+                                <td class="org-left">g, p, a, g<sup>a</sup> / g<sup>b</sup></td>
+                            </tr>
+                            <tr>
+                                <td class="org-left">berechnen</td>
+                                <td class="org-left">(g<sup>b</sup>)<sup>a</sup></td>
+                                <td class="org-left">&#xa0;</td>
+                                <td class="org-left">(g<sup>a</sup>)<sup>b</sup></td>
+                                <td class="org-left">g, p, a, g<sup>b</sup>, g<sup>ba</sup></td>
+                                <td class="org-left">g, p, g<sup>a</sup>, g<sup>b</sup></td>
+                                <td class="org-left">g, p, a, g<sup>a</sup>, g<sup>ab</sup> / g<sup>b</sup></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
 
