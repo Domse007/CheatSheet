@@ -192,14 +192,14 @@
 
 
             <div class = "z-depth-4 transparent" id="publicKeyCryptography"> 
-                <div class = "orange">
-                <ul class = "tabs">
-                    <li class = "tab orange"><a class = "active" href = "#bycicle" style="color: white;">Fahrradproblem</a></li>
-                    <li class = "tab orange"><a href = "#modulareArithmetik" style="color: white;">Modulare Arithmetik</a></li>
-                    <li class = "tab orange"><a href = "#diffieHellmann" style="color: white;">Diffie-Hellmann</a></li>
-                    <li class = "tab orange"><a href="#elGamal" style="color: white;">El Gamal</a></li>
-                    <li class = "tab orange"><a href="#rsa" style="color: white;">RSA</a></li>
-                </ul>
+                <div class = "orange z-depth-4" style="">
+                    <ul class = "tabs">
+                        <li class = "tab orange"><a class = "active" href = "#bycicle" style="color: white;">Fahrradproblem</a></li>
+                        <li class = "tab orange"><a href = "#modulareArithmetik" style="color: white;">Modulare Arithmetik</a></li>
+                        <li class = "tab orange"><a href = "#diffieHellmann" style="color: white;">Diffie-Hellmann</a></li>
+                        <li class = "tab orange"><a href="#elGamal" style="color: white;">El Gamal</a></li>
+                        <li class = "tab orange"><a href="#rsa" style="color: white;">RSA</a></li>
+                    </ul>
                 </div>
                 
                 <div class="card-panel white lighten-2 z-depth-4" id="bycicle">
@@ -297,6 +297,7 @@
 
                 <div class="card-panel white lighten-2 z-depth-4" id="diffieHellmann">
 
+                    <h3 class="black-text">Schematik  von Diffie-Hellmann</h3>
                     <p class="black-text">Die Erzeugung des gemeinsamen Keys ist in der folgenden Tabelle schematisch dargestellt.</p>
 
                     <table cellspacing="0" cellpadding="6" rules="groups" frame="hsides" style="background-color: white;">
@@ -323,9 +324,9 @@
                         <tbody>
                             <tr>
                                 <td class="org-left">publik uebertragen</td>
-                                <td class="org-left">g,p</td>
-                                <td class="org-left">&#x2014; g,p &#x2013;&gt;</td>
-                                <td class="org-left">g,p</td>
+                                <td class="org-left">g, p</td>
+                                <td class="org-left">&#x2014; g, p &#x2013;&gt;</td>
+                                <td class="org-left">g, p</td>
                                 <td class="org-left">g, p</td>
                                 <td class="org-left">g, p</td>
                                 <td class="org-left">g, p</td>
@@ -377,11 +378,25 @@
                             </tr>
                         </tbody>
                     </table>
+                    <p class="black-text">Zu erst generiert Alice einen Generator und eine Primzahl. Diese werden an Bob geschickt, aber Eve kann alle Daten abgreiffen.<br>
+                    Anschliessnd generieren beide einen zweiten Schlüssel und rechenen den Generator hoch ihren eigenen Schlüssel. Dann schickt Alice das Ergebnis ihrer Rechnung and Bob und auch hier kann Eve alles Abfangen. Genau das gleiche passiert jetzt mit den Daten von Bob<br>
+                    Jetzt können beide ihre erhaltenen Schlüssel hoch ihren ursprünglich privaten Schlüssel rechnen und beide besitzten den gleichen Schlüssel, der Eve nur mit viel mehr Rechenarbeit berechenen kann.</p>
                 </div>
 
+                <div class="card-panel white lighten-2 z-depth-4" id="elGamal">
+                    <h3 class="black-text">El Gamal</h3>
+                    <p>Die El Gamal verschlüsselung wurde von Taher Elgamal entwickelt und ist die Wahrscheinlich eines der einfachste möglichkeit eine Nachricht mit einem Schlüssel zu versehen.<br>
+                        Die Theorie besagt, das der Schlüssel mit der Nachricht und dem multiplikativen Inversen multipliziert wird.
+                    </p>
+                    <h3 class="black-text">Das Multiplikative Inverse</h3>
+                    <p>Das multiplikative Invers bei der modularen Arithmetik ist ein Teil der Formel a &#215 a<sup>-1</sup> mod b = 1. Bei der Formel weiss man a und b. Es geht nun darum eine Zahl zu finden, die in der Formel eingesetzt, das neutrale Element der Multiplikation zu finden, die eins.</p>
+                </div>
 
-
-
+                <div class="card-panel white lighten-2 z-depth-4" id="rsa">
+                    <h3 class="black-text">Das RSA verfahren</h3>
+                    <p class="black-text">Das RSA Verfahren ist Rechnerisch ein bisschen aufwändiger, aber formal einfacher.</p>
+                    <p class="black-text">Wenn Alice eine Nachricht an Bob senden möchte, so verschlüsselt sie die Nachricht mit seinem öffentlichen Schlüssel und nur Bob kann sie mit seinem privaten Schlüssel entschlüsseln. Das hat weitreichende Konsequenzen: Falls Alice eine Nachricht mit ihrem privaten Schlüssel verschlüsselt so kann jeder diese Nachricht mit ihrem öffentlichen Schlüssel entschlüsseln. Das sieht zunächst nicht besonders sinnvoll aus, aber es bedeutet, dass Alice ihre Nachricht digital unterschrieben hat: Jeder kann nachprüfen, dass nur sie diese Nachricht verschlüsselt haben kann.</p>
+                </div>
             </div> 
 
 
