@@ -30,7 +30,7 @@
                     <h1>Cheat Sheet</h1>
                 </strong>
             </header>
-        <center>
+        <p>
 
 
         <div>
@@ -191,11 +191,11 @@
 
 
 
-            <div class = "z-depth-4" id="publicKeyCryptography"> 
+            <div class = "z-depth-4 transparent" id="publicKeyCryptography"> 
                 <div class = "orange">
                 <ul class = "tabs">
                     <li class = "tab orange"><a class = "active" href = "#bycicle" style="color: white;">Fahrradproblem</a></li>
-                    <li class = "tab orange"><a href = "#modularArithmetics" style="color: white;">Modulare Arithmetik</a></li>
+                    <li class = "tab orange"><a href = "#modulareArithmetik" style="color: white;">Modulare Arithmetik</a></li>
                     <li class = "tab orange"><a href = "#interests" style="color: white;">Interesse</a></li>
                     <li class = "tab orange"><a href = "#diffieHellmann" style="color: white;">Diffie-Hellmann</a></li>
                     <li class = "tab orange"><a href="#elGamal" style="color: white;">El Gamal</a></li>
@@ -273,9 +273,36 @@
         
                     <h3 class="black-text">Was kann man davon nutzen?</h3>
                     <p class="black-text">Die Verschlüsselung ist nun wie bewiesen nicht nützlich, aber kann man etwas daraus rausziehen, das man für eine neue Verschlüsselungsmethode weiterverwenden können? <br/> Ja, definitiv. Es hat sehr gute Ansätze, hautsächlich nähmlich das die Schlüssel immer bei der Person bleiben und nie übertragen werden muss. Aber wie funktioniert eine Verschlüsselung, die auf dem gleichen Prinzip funktioniert, aber nicht die Schlüssel ohne weiters freigibt?</p>
-        
+                    <p class="black-text">Die Grunsätzliche Idee ist auch für die modulare Arithmetik interessant, da sie auch darauf aufbaut, das beide einen privaten Schlüssel haben. OTP würde in diesem Setting aber nicht funktionieren, da sie darauf aufbaut, das der Schlüssel Eve nie erreicht, da sonst die ganze Verschlüsselung hinfällig ist.</p>
         
                 </div>
+
+                <div class="card-panel white lighten-2 z-depth-4" id="modulareArithmetik">
+
+                    <h3 class="black-text">Was ist modulare Arithmetik?</h3>
+                    <p class="black-text">Die Modulare Arithmetik beruht darauf, das man sich eine Primzahl sucht und mit dieser Zahl und einer Zahlenmenge von dieser Zahl - 1. Ich werde in den folgenden Teilen diese Zahl m nennen. Die grosse Frage ist ja aber, was ist modulo.</p>
+
+                    <h3>Was ist modulo rechnen</h3>
+                    <p class="black-text">Modulo rechenen beschreibt das Rechnen mit Resten. So Wird beim dividieren einer Zahl keine Kommastellen angefangen sondern einfach der Rest Notiert. Dies ist auch das Resultat einer Modulo Rechnung. Die Notation einer modulo Rechnung wird in Programmiersprache mit einem Prozentzeichen angegeben. Beispiel: 7 % 3 = 1 <br>
+                    <p class="black-text">Die Notation in der Mathematik ist sehr àhnlich. Beispiel: 8mod3 = 2. Allerdings wird das Gleichheitszeichen häufig durch ein Kongruenzzeichen ersetzt. Die Schreibweise ist eigentlich ein Gleichheitszeichen, mit dem Unterschied, das es aus drei Strichen besteht.</p>
+
+                    <h3 class="black-text">Was kann man nun damit machen?</h3>
+                    <p class="black-text">Wir nehemen eine Primzahl m die möglichst gross ist, damit es viele Möglichkeiten gibt. Anschliessend definiert man eine Zahlenmengen Zm die von null bis m-1 geht. Anschliessend suchen wir eine Zahl x die möglichst viele Resultate produziert. Die Grösste Zahl die x sein kann ist m/2-1.</p>                   
+                
+                    <h3 class="black-text">Wieso sind modulo Primzahlen intersssant für die Verschlüsslung</h3>
+                    <p class="black-text">Wenn man die Nachricht mit dem Schlüssel entschlüsselt, und das ganze im Binärsystem macht, ist man spätestens nach 2r Multiplikationen fertog, wobei r die Anzahl der Binärziffern ist. Das Interessante das ganze im Binärsystem zu machen ist, das man die Quadrierungen zu Multiplikationen umwandeln kann.
+
+                    <h3 class="black-text">Was ist ein Generator?</h3>  
+                    <p class="black-text">Der Generator ist die Zahl die deren alle Reste von Modulo abdecken.</p>                
+                </div>
+
+                <div class="card-panel white lighten-2 z-depth-4" id="interesse"></div>
+
+                </div>
+
+
+
+
             </div> 
 
 
@@ -326,7 +353,6 @@
                     Quellen herunterladen
                 </a>
             </div>
-
 
 
 
