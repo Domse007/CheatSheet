@@ -18,8 +18,23 @@
         <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
         </script> 
 
-        <script src="JavaScript/scripts.js"></script>
-        <script src="JavaScript/caesar.js"></script>
+        <script src="scripts/bycicle.js"></script>
+        <script src="scripts/caesar.js"></script>
+
+        <style>
+            ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+                color: black;
+                opacity: 1; /* Firefox */
+            }
+
+            :-ms-input-placeholder { /* Internet Explorer 10-11 */
+                color: black;
+            }
+
+            ::-ms-input-placeholder { /* Microsoft Edge */
+                color: black;
+            }
+        </style>
    </head>
    
    <body class = "container"> 
@@ -57,12 +72,12 @@
                 <p class="black-text">Sie funktioniert mit dem Verschieben der Stellung im Alphabet.</p>
 
                 <div>
-                    <div class="z-depth-4"; class="black-text"; id="log";></div>
-
-                    <input type="text" name="lname"; style="margin-left: 8%; width: 50%;"; id="inputencrypt">
-                    <input type="text" name="lname"; style="width: 10%;"; id="inputnumberencrypt">
+                    <input type="text" name="lname"; style="margin-left: 8%; width: 50%;"; id="inputencrypt" placeholder="Zu verschlüsselnder Text">
+                    <input type="text" name="lname"; style="width: 10%;"; id="inputnumberencrypt" placeholder="Nummer">
 
                     <button onclick="encrypt()"; class="waves-effect orange btn" ; id="buttonencrypt">Verschlüsseln</button>
+
+                    <div class="z-depth-4"; class="black-text"; id="log";></div>
                 </div>
 
               
@@ -71,11 +86,11 @@
                 <p class="black-text">Leider ist die Caesar verschlüsselung nicht sehr sicher und kann spätestens nach 26 versuchen entschlüsselt.</p>
 
                 <div>
-                    <div class="z-depth-4"; class="black-text"; id="log2";></div>
-
-                    <input type="text" name="lname"; style="margin-left: 8%; width: 50%;"; id="inputdecrypt">
+                    <input type="text" name="lname"; style="margin-left: 8%; width: 50%;"; id="inputdecrypt" placeholder="Zu entschlüsselnder Text">
 
                     <button onclick="decrypt()"; class="waves-effect orange btn" ; id="buttonencrypt">Entschlüsseln</button>
+
+                    <div class="z-depth-4"; class="black-text"; id="log2";></div>
                 </div>
 
 
@@ -116,7 +131,7 @@
                 Angenommen ‘A’ verschlüsselt die Nachricht “BADEN” mit dem Key “FVOYY”. Code:</p>
     
                 <div class="z-depth-4"; class="black-text"; id="logCode";>
-                    alphabet=”ABCDEFGHIJKLMNOPQRSTUVWXYZ”<br>
+                    alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ"<br>
                     <br>
                     def add_letter(letter_key , letter_plain):<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;new_letter_pos=alphabet.find(letter_key)+alphabet.find(letter_plain)<br>
@@ -126,32 +141,32 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;return new_letter<br>
                         <br>
                     def  add_strings(str_A , str_B):<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;result=””<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;result=""<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;for i in range(len(str_A)):<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result=result+add_letter(str_A[i] , str_B[i])<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;return result<br>
-                    plaintext=”BADEN”<br>
-                    key=”FVOYY<br>
+                    plaintext="BADEN"<br>
+                    key="FVOYY"<br>
                     add_strings(plaintext,key)<br>
                 </div>
     
-                <samp class="black-text">Output: >> ‘GVRCL’</samp>
+                <samp class="black-text">Output: >> "GVRCL"</samp>
     
                 <p class="black-text">Die verschlüsselte Nachricht ‘GVRCL’ wird an Person ‘B’ geschickt, welcher den Schlüssel kennt und mit Python einfach entschlüsseln kann. Funktion:</p>
     
                 <div class="z-depth-4"; class="black-text"; id="logCode";>
-                    cipher=”GVRCL”<br>
-                    key=”OGDLS”<br>
+                    cipher="GVRCL"<br>
+                    key="OGDLS"<br>
                     <br>
                     def  subtr_strings(str_A , str_B):<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;result=””<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;result=""<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;for i in range(len(str_A)):<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result=result+subtr_letter(str_A[i] , str_B[i])<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;return result  <br>
-                    subtr_strings(“cipher” , “key”)<br>
+                    subtr_strings("cipher" , "key")<br>
                 </div>
     
-                <samp class="black-text">Output: >> ‘BADEN’</samp>
+                <samp class="black-text">Output: >> "BADEN"</samp>
     
     
                 <p class="black-text">Nachricht wird aber von einer Drittperson abgefangen, die den Schlüssel jedoch nicht kennt. Um den Text zu entschlüsseln, entschlüsselt sie ihn mit jedem möglichen Schlüssel.<br>
@@ -162,19 +177,19 @@
                     subtr_strings(“GVRCL” , “LNOYX”)
                 </div>
     
-                <samp class="black-text">Output: >> ‘VIDEO’</samp>
+                <samp class="black-text">Output: >> "VIDEO"</samp>
     
                 <div class="z-depth-4"; class="black-text"; id="logCode";>
-                    subtr_strings(“GVRCL” , “VRZYY”)
+                    subtr_strings("GVRCL" , "VRZYY")
                 </div>
     
-                <samp class="black-text">Output: >> ‘LESEN’</samp>
+                <samp class="black-text">Output: >> "LESEN"</samp>
     
                 <p class="black-text">Wie man sieht kann die Drittperson nicht wissen welche Lösung jetzt richtig ist und somit ist OTP sicher.</p>
     
                 <h3 class="black-text">Gib beispiele oder Codefragmente, um zu zeigen, weshalb es unsicher ist, den Key zwei mal zu verwenden</h3>
     
-                <p class="black-text">Wenn jetzt ‘A’ den gleichen Key ‘FVOYY’ nochmals verwendet, um zum Beispiel das Wort ‘SPORT’ zu verschlüsseln, kann die Drittperson die beiden Stings aneinanderhängen, bevor sie alle möglichen Schlüssel ausprobiert. Dadurch erhält sie weniger Lösungen die Sinn ergeben. Aus beiden Nachrichten kann also ein sinnvoller String entstehen, wodurch die Drittperson den Key finden kann und somit auch beide Nachrichten entschlüsseln kann. Die mehrfache Nutzung eines Schlüssels erlaubt also die vereinfachte Entschlüsselung-> nicht mehr sicher.</p>
+                <p class="black-text">Wenn jetzt ‘A’ den gleichen Key ‘FVOYY’ nochmals verwendet, um zum Beispiel das Wort ‘SPORT’ zu verschlüsseln, kann die Drittperson die beiden Stings aneinanderhängen, bevor sie alle möglichen Schlüssel ausprobiert. Dadurch erhält sie weniger Lösungen die Sinn ergeben. Aus beiden Nachrichten kann also ein sinnvoller String entstehen, wodurch die Drittperson den Key finden kann und somit auch beide Nachrichten entschlüsseln kann. Die mehrfache Nutzung eines Schlüssels erlaubt also die vereinfachte Entschlüsselung -> nicht mehr sicher.</p>
             </div>
 
 
@@ -211,8 +226,8 @@
         
                     <p class="black-text">Bitte gib eine einen String mit maximal 6 kleingeschriebene Zeichen länge.</p>
         
-                    <input type="text" name="lname"; style="margin-left: 8%; width: 50%;"; id="inputencrypt1">
-                    <input type="text" name="lname"; style="width: 10%;"; id="inputnumberencrypt1">
+                    <input type="text" name="lname"; style="margin-left: 8%; width: 50%;"; id="inputencrypt1" placeholder="Zu verschlüsselnder Text">
+                    <input type="text" name="lname"; style="width: 10%;"; id="inputnumberencrypt1" placeholder="Nummer">
                     <button onclick="bicycle()"; class="waves-effect orange btn" ; id="buttonencrypt">Verschlüsseln</button>
                     <div class="z-depth-4"; class="black-text"; id="smalllog";></div>
         
@@ -224,7 +239,7 @@
                     <p class="black-text">Anschliessend verschlüsselt Person 2 die Nachricht zusätzlich meit seinem Schlüssel und schickt es wieder zurück an Person 1. Aber auch diese Nachricht wird von der Person in der Mitte abgefangen.</p>
                     <p class="black-text">Jetzt ist die Nachricht ja schon übermittelt und man muss nur noch einen zweiten Key generieren.</p>
         
-                    <input type="text" name="lname"; style="width: 60%; margin-left: 8%;"; id="inputnumberencrypt2">
+                    <input type="text" name="lname"; style="width: 60%; margin-left: 8%;"; id="inputnumberencrypt2" placeholder="2. Schlüssel">
                     <button onclick="bicycle2()"; class="waves-effect orange btn" ; id="buttonencrypt">2. Verschlüsseln</button>
                     <div class="z-depth-4"; class="black-text"; id="smalllog2";></div>
         
