@@ -176,7 +176,9 @@
                     </div>
                     <br>
                     <samp class="black-text">Output: "BADEN"</samp>
+
                     <br>
+                    <br>    
                     <p class="black-text">Nachricht wird aber von einer Drittperson abgefangen, die den Schlüssel jedoch
                         nicht kennt. Um den Text zu entschlüsseln, entschlüsselt sie ihn mit jedem möglichen
                         Schlüssel.<br>
@@ -372,6 +374,10 @@
                                 <h3 class="black-text">Was ist ein Generator?</h3>
                                 <p class="black-text">Der Generator ist die Zahl die deren alle Reste von Modulo
                                     abdecken.</p>
+                                <p class="black-text">Ein Beispiel dafür ist die Zahl 7 mit dem Generator 5.<br>
+                                    Das Rechnungen haben folgenden Output produziert: <math>[1, 5, 4, 6, 2, 3, 1]</math><br>
+                                    Hier sieht man das hier alle Zahlen von 0 bis 7-1 abgedeckt wurden.
+                                </p> 
                     </div>
 
                     <div class="card-panel white lighten-2 z-depth-4" id="diffieHellmann">
@@ -475,7 +481,15 @@
                             eines der einfachste möglichkeit eine Nachricht mit einem Schlüssel zu versehen.<br>
                             Die Theorie besagt, das der Schlüssel mit der Nachricht und dem multiplikativen Inversen
                             multipliziert wird.
-                        </p>
+                        </p><br>
+
+                        <math>i&#215;g<sup>ab</sup>&#215;m = m</math>
+                        <ul>
+                            <li style="text-align: left; margin-left: 40%;">i ist das multiplikative Invers</li>
+                            <li style="text-align: left; margin-left: 40%;">g ist der Generator</li>
+                            <li style="text-align: left; margin-left: 40%;">a und b sind die Schlüssel</li>
+                            <li style="text-align: left; margin-left: 40%;">m ist die Nachricht</li>
+                        </ul>
                         <h3 class="black-text">Das Multiplikative Inverse</h3>
                         <p>Das multiplikative Invers bei der modularen Arithmetik ist ein Teil der Formel a &#215
                             a<sup>-1</sup> mod b = 1. Bei der Formel weiss man a und b. Es geht nun darum eine Zahl zu

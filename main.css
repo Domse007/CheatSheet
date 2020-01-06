@@ -32,7 +32,8 @@ body {
 #smalllog4,
 #smalllog5,
 #smalllog6,
-#smalllogOTP1 {
+#smalllogOTP1,
+#smalllogOTP2 {
   height: 1.25em;
   overflow-y: hidden;
   overflow-x: hidden;
