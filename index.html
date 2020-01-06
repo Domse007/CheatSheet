@@ -20,6 +20,7 @@
 
         <script src="scripts/bycicle.js"></script>
         <script src="scripts/caesar.js"></script>
+        <script src="scripts/onetimepads.js"></script>
 
         <style>
             ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -107,7 +108,7 @@
             <div class="card-panel white lighten-2 z-depth-4" id="oneTimePads">
 
                 <h3 class="black-text">Was sind One Time Pads?</h3>
-                <p class="black-text">Es ist ein systematisches Verschlüsselungsverfahren zur geheimen Nachrichtenübermittlung. Es wird ein Schlüssel verwendet, dass so lang wie die Nachricht ist. Es gehört zu den polyalphabetischen Substitutionsverfahren, dass heisst ein Buchstabe (oder ein Zeichen) wird in einen anderen Buchstaben (oder Zeichen) umgewandelt.</p>
+                <p class="black-text">Es ist ein systematisches Verschlüsselungsverfahren zur geheimen Nachrichtenübermittlung. Es wird ein Schlüssel verwendet, der so lang wie die Nachricht ist. Es gehört zu den polyalphabetischen Substitutionsverfahren, dass heisst ein Buchstabe (oder ein Zeichen) wird in einen anderen Buchstaben (oder Zeichen) umgewandelt.</p>
     
                 <h3 class="black-text">Unter welchen Umständen sind sie perfekt sicher und wieso sind sie unter diesen Umständen perfekt sicher?</h3>
                 <p class="black-text">Der Einmalschlüssel muss:
@@ -149,8 +150,14 @@
                     key="FVOYY"<br>
                     add_strings(plaintext,key)<br>
                 </div>
-    
-                <samp class="black-text">Output: >> "GVRCL"</samp>
+
+                <samp class="black-text">Output: >> "GVRCL"</samp><br>
+
+                <input type="text" name="lname"; style="margin-left: 8%; width: 30%;"; id="inputOTP1" placeholder="Zu verschlüsselnder Text">
+                <input type="text" name="lname"; style="width: 30%;"; id="inputOTP2" placeholder="Nummer mit derselben Anzahl Stellen wie String">
+                <button onclick="add_strings()"; class="waves-effect orange btn" ; id="buttonencrypt">Verschlüsseln</button>
+                <div class="z-depth-4"; class="black-text"; id="smalllogOTP1";></div>
+
     
                 <p class="black-text">Die verschlüsselte Nachricht ‘GVRCL’ wird an Person ‘B’ geschickt, welcher den Schlüssel kennt und mit Python einfach entschlüsseln kann. Funktion:</p>
     
@@ -170,7 +177,7 @@
     
     
                 <p class="black-text">Nachricht wird aber von einer Drittperson abgefangen, die den Schlüssel jedoch nicht kennt. Um den Text zu entschlüsseln, entschlüsselt sie ihn mit jedem möglichen Schlüssel.<br>
-                Dabei gibt es 26^5= 11 881 376 mögliche Schlüssel, also gibt es auch genauso viele Lösungen. Es gibt mehrere Lösungen die Sinn ergeben. Da die Drittperson auch nicht Weiss auf welcher Sprache die Nachricht geschrieben wurde, gibt es nur noch mehr Sinnvolle Lösungen. Sie benutzt den selben Python-Code wie Bob:</p>
+                Dabei gibt es 26<sup>5</sup>= 11 881 376 mögliche Schlüssel, also gibt es auch genauso viele Lösungen. Es gibt mehrere Lösungen die Sinn ergeben. Da die Drittperson auch nicht Weiss auf welcher Sprache die Nachricht geschrieben wurde, gibt es nur noch mehr Sinnvolle Lösungen. Sie benutzt den selben Python-Code wie Bob:</p>
     
     
                 <div class="z-depth-4"; class="black-text"; id="logCode";>
@@ -187,7 +194,7 @@
     
                 <p class="black-text">Wie man sieht kann die Drittperson nicht wissen welche Lösung jetzt richtig ist und somit ist OTP sicher.</p>
     
-                <h3 class="black-text">Gib beispiele oder Codefragmente, um zu zeigen, weshalb es unsicher ist, den Key zwei mal zu verwenden</h3>
+                <h3 class="black-text">Wieso ist ein mehrmals verwendeter Key nicht sicher?</h3>
     
                 <p class="black-text">Wenn jetzt ‘A’ den gleichen Key ‘FVOYY’ nochmals verwendet, um zum Beispiel das Wort ‘SPORT’ zu verschlüsseln, kann die Drittperson die beiden Stings aneinanderhängen, bevor sie alle möglichen Schlüssel ausprobiert. Dadurch erhält sie weniger Lösungen die Sinn ergeben. Aus beiden Nachrichten kann also ein sinnvoller String entstehen, wodurch die Drittperson den Key finden kann und somit auch beide Nachrichten entschlüsseln kann. Die mehrfache Nutzung eines Schlüssels erlaubt also die vereinfachte Entschlüsselung -> nicht mehr sicher.</p>
             </div>
@@ -220,9 +227,9 @@
                 <div class="card-panel white lighten-2 z-depth-4" id="bycicle">
 
                     <h3 class="black-text">Wie kann man einem Fremden ein Fahrrad verkaufen ohne ihn jemals zu sehen?</h3>
-                    <p class="black-text">Man schliesst sein Fahrrad an einem neutralem Ort ab und geht weg. Anschliessend kommt die andere Person und schleisst das Velo zusätzlich mit seinem eigenen Schloss ab und geht wieder weg. Anschliessend geht der Verkäufer wieder zurüch und entfernt sein Schloss. So hat der Käufer sein Fahrrad nur noch durch sein eigenes Schloss verschlossen.</p>
+                    <p class="black-text">Man schliesst sein Fahrrad an einem neutralem Ort ab und geht weg. Anschliessend kommt die andere Person und schliesst das Velo zusätzlich mit seinem eigenen Schloss ab und geht wieder weg. Anschliessend geht der Verkäufer wieder zurück und entfernt sein Schloss. So hat der Käufer sein Fahrrad nur noch durch sein eigenes Schloss verschlossen.</p>
                     <h3 class="black-text">Ist dies auch für die Kryptographie interessant?</h3>
-                    <p class="black-text">Die Antwort lautet nein. Das Problem liegt darin, das wenn man eine Nachricht verschlüsselt, sie and die andere Person verschlüsselt, sie die Nachricht zusätzlich verschlüsselt und wieder zurüchschickt kann die "Man in the Middle"-Person den Key der zweiten Person herausfinden.</p>
+                    <p class="black-text">Die Antwort lautet nein. Das Problem liegt darin, das wenn man eine Nachricht verschlüsselt, sie and die andere Person verschlüsselt, sie die Nachricht zusätzlich verschlüsselt und wieder zurückschickt kann die "Man in the Middle"-Person den Key der zweiten Person herausfinden.</p>
         
                     <p class="black-text">Bitte gib eine einen String mit maximal 6 kleingeschriebene Zeichen länge.</p>
         

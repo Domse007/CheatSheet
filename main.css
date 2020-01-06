@@ -25,7 +25,7 @@ body {
     text-align: left;
 }
 
-#smalllog, #smalllog2, #smalllog3, #smalllog4, #smalllog5, #smalllog6{
+#smalllog, #smalllog2, #smalllog3, #smalllog4, #smalllog5, #smalllog6, #smalllogOTP1{
     height: 1.25em;
     overflow-y: hidden;
     overflow-x: hidden;
