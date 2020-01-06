@@ -1,490 +1,635 @@
 <!DOCTYPE html>
 <html>
-   <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <link rel="stylesheet" href='main.css'>
-        <meta charset="utf-8"/>
 
-        <link rel="icon" href="favicons/favicon.ico" type="image/x-icon"/>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href='main.css'>
+    <meta charset="utf-8" />
 
-        <title>Cheat Sheet</title>
-        <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
-        <link rel = "stylesheet"
-            href = "https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel = "stylesheet" 
-            href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
-        <script type = "text/javascript"
-            src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
-        <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
-        </script> 
+    <link rel="icon" href="favicons/favicon.ico" type="image/x-icon" />
 
-        <script src="scripts/bycicle.js"></script>
-        <script src="scripts/caesar.js"></script>
-        <script src="scripts/onetimepads.js"></script>
+    <title>Cheat Sheet</title>
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+    </script>
 
-        <style>
-            ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-                color: black;
-                opacity: 1; /* Firefox */
-            }
+    <script src="scripts/bycicle.js"></script>
+    <script src="scripts/caesar.js"></script>
+    <script src="scripts/onetimepads.js"></script>
 
-            :-ms-input-placeholder { /* Internet Explorer 10-11 */
-                color: black;
-            }
+    <style>
+        ::placeholder {
+            /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: black;
+            opacity: 1;
+            /* Firefox */
+        }
 
-            ::-ms-input-placeholder { /* Microsoft Edge */
-                color: black;
-            }
-        </style>
-   </head>
-   
-   <body class = "container"> 
-        
-        <center>
-            <header class = 'header'>
-                <strong>
-                    <h1>Cheat Sheet</h1>
-                </strong>
-            </header>
+        :-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: black;
+        }
+
+        ::-ms-input-placeholder {
+            /* Microsoft Edge */
+            color: black;
+        }
+    </style>
+</head>
+
+<body class="container">
+
+    <center>
+        <header class='header'>
+            <strong>
+                <h1>Cheat Sheet</h1>
+            </strong>
+        </header>
         <p>
 
 
-        <div>
-            <div class = "orange z-depth-4">
-                <ul class = "tabs">
-                    <li class = "tab orange"><a class = "active" href = "#caesar" style="color: white;">Cäsar</a></li>
-                    <li class = "tab orange"><a href = "#oneTimePads" style="color: white;">One Time Pads</a></li>
-                    <li class = "tab orange"><a href = "#publicKeyCryptography" style="color: white;">Public Key Cryptography</a></li>
-                    <li class = "tab orange"><a href = "#bitcoin" style="color: white;">Bitcoin</a></li>
-                </ul>
-            </div>
-
-
-
-
-
-
-
-
-            <div class="card-panel white lighten-2 z-depth-4"; id="caesar">
-                <h3 class="black-text">Einführung</h3>
-                <p class="black-text">Die Caesar Verschlüsselung ist eine von den Römern etwickeltes System, die Nachrichten inhalte zu verschlüsseln.</p>
-                <h3 class="black-text">Funktion</h3>
-                <p class="black-text">Sie funktioniert mit dem Verschieben der Stellung im Alphabet.</p>
-
-                <div>
-                    <input type="text" name="lname"; style="margin-left: 8%; width: 50%;"; id="inputencrypt" placeholder="Zu verschlüsselnder Text">
-                    <input type="text" name="lname"; style="width: 10%;"; id="inputnumberencrypt" placeholder="Nummer">
-
-                    <button onclick="encrypt()"; class="waves-effect orange btn" ; id="buttonencrypt">Verschlüsseln</button>
-
-                    <div class="z-depth-4"; class="black-text"; id="log";></div>
-                </div>
-
-              
-
-                <h3 class="black-text">Sicher?</h3>
-                <p class="black-text">Leider ist die Caesar verschlüsselung nicht sehr sicher und kann spätestens nach 26 versuchen entschlüsselt.</p>
-
-                <div>
-                    <input type="text" name="lname"; style="margin-left: 8%; width: 50%;"; id="inputdecrypt" placeholder="Zu entschlüsselnder Text">
-
-                    <button onclick="decrypt()"; class="waves-effect orange btn" ; id="buttonencrypt">Entschlüsseln</button>
-
-                    <div class="z-depth-4"; class="black-text"; id="log2";></div>
-                </div>
-
-
-                <h3 class="black-text">Beschleunigung</h3>
-                <p class="black-text">Die entschlüsselung kann aber massiv beschleunigt werden, da es für jeden Buchstaben eine Häufigkeit hat, wie häufig er in einem Text vorkommt. Dies kann aber auch auf die verschlüsselte Version des Textes angewendet werden. So hat man bei längeren Texten eine sehr gute Wahrscheinlichkeit es beim ersten Versuch das ganze beim ersten Versuch lesbar zu entschlüsseln.</p>
-            </div>
-
-
-
-
-
-
-
-            <div class="card-panel white lighten-2 z-depth-4" id="oneTimePads">
-
-                <h3 class="black-text">Was sind One Time Pads?</h3>
-                <p class="black-text">Es ist ein systematisches Verschlüsselungsverfahren zur geheimen Nachrichtenübermittlung. Es wird ein Schlüssel verwendet, der so lang wie die Nachricht ist. Es gehört zu den polyalphabetischen Substitutionsverfahren, dass heisst ein Buchstabe (oder ein Zeichen) wird in einen anderen Buchstaben (oder Zeichen) umgewandelt.</p>
-    
-                <h3 class="black-text">Unter welchen Umständen sind sie perfekt sicher und wieso sind sie unter diesen Umständen perfekt sicher?</h3>
-                <p class="black-text">Der Einmalschlüssel muss:
-                
-                <ul class="collection" style="width: 50%;">
-                    <li class="collection-item black-text">mindestens so lang wie die Nachricht sein</li>
-                    
-                    <li class="collection-item black-text">geheim bleiben</li>
-                
-                    <li class="collection-item black-text">darf nicht wiederverwendet werden</li>
-            
-                    <li class="collection-item black-text">gleichverteilt zufällig gewählt werden</li>
-        
-                    <li class="collection-item black-text">Es ist unmöglich den Schlüssel zu erraten oder zu erschliessen, da jeder mögliche Schlüssel mit der gleichen Wahrscheinlichkeit auftreten kann.</li>
-                </ul>
-                </p>
-    
-    
-    
-                <p class="black-text">Hier ein Beispiel dazu:<br>
-                Angenommen ‘A’ verschlüsselt die Nachricht “BADEN” mit dem Key “FVOYY”. Code:</p>
-    
-                <div class="z-depth-4"; class="black-text"; id="logCode";>
-                    alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ"<br>
-                    <br>
-                    def add_letter(letter_key , letter_plain):<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;new_letter_pos=alphabet.find(letter_key)+alphabet.find(letter_plain)<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;if new_letter_pos>25:<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new_letter_pos=new_letter_pos-26<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;new_letter=alphabet[new_letter_pos]<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;return new_letter<br>
-                        <br>
-                    def  add_strings(str_A , str_B):<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;result=""<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;for i in range(len(str_A)):<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result=result+add_letter(str_A[i] , str_B[i])<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;return result<br>
-                    plaintext="BADEN"<br>
-                    key="FVOYY"<br>
-                    add_strings(plaintext,key)<br>
-                </div>
-
-                <samp class="black-text">Output: >> "GVRCL"</samp><br>
-
-                <input type="text" name="lname"; style="margin-left: 8%; width: 30%;"; id="inputOTP1" placeholder="Zu verschlüsselnder Text">
-                <input type="text" name="lname"; style="width: 30%;"; id="inputOTP2" placeholder="Nummer mit derselben Anzahl Stellen wie String">
-                <button onclick="add_strings()"; class="waves-effect orange btn" ; id="buttonencrypt">Verschlüsseln</button>
-                <div class="z-depth-4"; class="black-text"; id="smalllogOTP1";></div>
-
-    
-                <p class="black-text">Die verschlüsselte Nachricht ‘GVRCL’ wird an Person ‘B’ geschickt, welcher den Schlüssel kennt und mit Python einfach entschlüsseln kann. Funktion:</p>
-    
-                <div class="z-depth-4"; class="black-text"; id="logCode";>
-                    cipher="GVRCL"<br>
-                    key="OGDLS"<br>
-                    <br>
-                    def  subtr_strings(str_A , str_B):<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;result=""<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;for i in range(len(str_A)):<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result=result+subtr_letter(str_A[i] , str_B[i])<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;return result  <br>
-                    subtr_strings("cipher" , "key")<br>
-                </div>
-    
-                <samp class="black-text">Output: >> "BADEN"</samp>
-    
-    
-                <p class="black-text">Nachricht wird aber von einer Drittperson abgefangen, die den Schlüssel jedoch nicht kennt. Um den Text zu entschlüsseln, entschlüsselt sie ihn mit jedem möglichen Schlüssel.<br>
-                Dabei gibt es 26<sup>5</sup>= 11 881 376 mögliche Schlüssel, also gibt es auch genauso viele Lösungen. Es gibt mehrere Lösungen die Sinn ergeben. Da die Drittperson auch nicht Weiss auf welcher Sprache die Nachricht geschrieben wurde, gibt es nur noch mehr Sinnvolle Lösungen. Sie benutzt den selben Python-Code wie Bob:</p>
-    
-    
-                <div class="z-depth-4"; class="black-text"; id="logCode";>
-                    subtr_strings(“GVRCL” , “LNOYX”)
-                </div>
-    
-                <samp class="black-text">Output: >> "VIDEO"</samp>
-    
-                <div class="z-depth-4"; class="black-text"; id="logCode";>
-                    subtr_strings("GVRCL" , "VRZYY")
-                </div>
-    
-                <samp class="black-text">Output: >> "LESEN"</samp>
-    
-                <p class="black-text">Wie man sieht kann die Drittperson nicht wissen welche Lösung jetzt richtig ist und somit ist OTP sicher.</p>
-    
-                <h3 class="black-text">Wieso ist ein mehrmals verwendeter Key nicht sicher?</h3>
-    
-                <p class="black-text">Wenn jetzt ‘A’ den gleichen Key ‘FVOYY’ nochmals verwendet, um zum Beispiel das Wort ‘SPORT’ zu verschlüsseln, kann die Drittperson die beiden Stings aneinanderhängen, bevor sie alle möglichen Schlüssel ausprobiert. Dadurch erhält sie weniger Lösungen die Sinn ergeben. Aus beiden Nachrichten kann also ein sinnvoller String entstehen, wodurch die Drittperson den Key finden kann und somit auch beide Nachrichten entschlüsseln kann. Die mehrfache Nutzung eines Schlüssels erlaubt also die vereinfachte Entschlüsselung -> nicht mehr sicher.</p>
-            </div>
-
-
-            
-            
-
-
-
-
-
-
-
-
-
-
-
-            <div class = "z-depth-4 transparent" id="publicKeyCryptography"> 
-                <div class = "orange z-depth-4" style="">
-                    <ul class = "tabs">
-                        <li class = "tab orange"><a class = "active" href = "#bycicle" style="color: white;">Fahrradproblem</a></li>
-                        <li class = "tab orange"><a href = "#modulareArithmetik" style="color: white;">Modulare Arithmetik</a></li>
-                        <li class = "tab orange"><a href = "#diffieHellmann" style="color: white;">Diffie-Hellmann</a></li>
-                        <li class = "tab orange"><a href="#elGamal" style="color: white;">El Gamal</a></li>
-                        <li class = "tab orange"><a href="#rsa" style="color: white;">RSA</a></li>
+            <div>
+                <div class="orange z-depth-4">
+                    <ul class="tabs">
+                        <li class="tab orange"><a class="active" href="#caesar" style="color: white;">Cäsar</a></li>
+                        <li class="tab orange"><a href="#oneTimePads" style="color: white;">One Time Pads</a></li>
+                        <li class="tab orange"><a href="#publicKeyCryptography" style="color: white;">Public Key
+                                Cryptography</a></li>
+                        <li class="tab orange"><a href="#bitcoin" style="color: white;">Bitcoin</a></li>
                     </ul>
                 </div>
-                
-                <div class="card-panel white lighten-2 z-depth-4" id="bycicle">
+                <div class="card-panel white lighten-2 z-depth-4" id="caesar">
+                    <h3 class="black-text">Einführung</h3>
+                    <p class="black-text">Die Caesar Verschlüsselung ist eine von den Römern etwickeltes System, die
+                        Nachrichten inhalte zu verschlüsseln.</p>
+                    <h3 class="black-text">Funktion</h3>
+                    <p class="black-text">Sie funktioniert mit dem Verschieben der Stellung im Alphabet.</p>
 
-                    <h3 class="black-text">Wie kann man einem Fremden ein Fahrrad verkaufen ohne ihn jemals zu sehen?</h3>
-                    <p class="black-text">Man schliesst sein Fahrrad an einem neutralem Ort ab und geht weg. Anschliessend kommt die andere Person und schliesst das Velo zusätzlich mit seinem eigenen Schloss ab und geht wieder weg. Anschliessend geht der Verkäufer wieder zurück und entfernt sein Schloss. So hat der Käufer sein Fahrrad nur noch durch sein eigenes Schloss verschlossen.</p>
-                    <h3 class="black-text">Ist dies auch für die Kryptographie interessant?</h3>
-                    <p class="black-text">Die Antwort lautet nein. Das Problem liegt darin, das wenn man eine Nachricht verschlüsselt, sie and die andere Person verschlüsselt, sie die Nachricht zusätzlich verschlüsselt und wieder zurückschickt kann die "Man in the Middle"-Person den Key der zweiten Person herausfinden.</p>
-        
-                    <p class="black-text">Bitte gib eine einen String mit maximal 6 kleingeschriebene Zeichen länge.</p>
-        
-                    <input type="text" name="lname"; style="margin-left: 8%; width: 50%;"; id="inputencrypt1" placeholder="Zu verschlüsselnder Text">
-                    <input type="text" name="lname"; style="width: 10%;"; id="inputnumberencrypt1" placeholder="Nummer">
-                    <button onclick="bicycle()"; class="waves-effect orange btn" ; id="buttonencrypt">Verschlüsseln</button>
-                    <div class="z-depth-4"; class="black-text"; id="smalllog";></div>
-        
-                    <br/>
-                    <br/>   
-        
-        
-                    <p class="black-text">Nun hat die erste Person die Nachricht verschlüsselt und reicht die Nachricht an die zwite Person weiter. Es gibt allerdings noch die Person in der Mitte, die auf keinen Umständen die Nachricht lesen sollte, aber sie fängt die erste Nachricht ab.</p>
-                    <p class="black-text">Anschliessend verschlüsselt Person 2 die Nachricht zusätzlich meit seinem Schlüssel und schickt es wieder zurück an Person 1. Aber auch diese Nachricht wird von der Person in der Mitte abgefangen.</p>
-                    <p class="black-text">Jetzt ist die Nachricht ja schon übermittelt und man muss nur noch einen zweiten Key generieren.</p>
-        
-                    <input type="text" name="lname"; style="width: 60%; margin-left: 8%;"; id="inputnumberencrypt2" placeholder="2. Schlüssel">
-                    <button onclick="bicycle2()"; class="waves-effect orange btn" ; id="buttonencrypt">2. Verschlüsseln</button>
-                    <div class="z-depth-4"; class="black-text"; id="smalllog2";></div>
-        
-                    <br/>
-                    <br/>   
-        
-                    <p class="black-text">Nun teilt die erste Person die doppelt verschlüsselte Nachricht durch den eigenen Schlüssel und schickt die einfach verschlüsselte Nachricht zurück an die 2. Person. Natürlich wird diese Nachricht auch von einem Mittelmann abgefangen.</p>
-        
-                    <button onclick="bicycle4()"; style="margin-left: 68%; margin-bottom: 0.5%;" ; class="waves-effect orange btn" ; id="buttonencrypt">Entschlüsseln</button>
-                    <div class="z-depth-4"; class="black-text"; id="smalllog4";></div>
-        
-                                
-                    <br/>
-                    <br/> 
-        
-                    <p class="black-text">Nun kommt der finale Schritt: Die zweite Person nimmt die erneut übermittelte Nachricht und teilt und es durch den eigenen Schlüssel. Somit bekommt die Person die Nachricht und sowohl der Schlüssel noch der unverschlüsselte Text übermittelt.</p>
-                    <button onclick="bicycle5()"; style="margin-left: 68%; margin-bottom: 0.5%;" ; class="waves-effect orange btn" ; id="buttonencrypt">Entschlüsseln</button>
-                    <div class="z-depth-4"; class="black-text"; id="smalllog5";></div>
-        
-                                            
-                    <br/>
-                    <br/> 
-        
-                    <h3 class="black-text">Und wieso ist dies nicht gut?</h3>
-                    <p class="black-text">Jetzt hat aber die Person in der Mitte sowohl die einfachverschlüsselte Text, als auch den doppelt verschlüsselten Text. Wenn jetzt die Person in der Mitte den doppelt verschlüsselten Text, durch den einfachverschlüsselten Text teil, bekommt er den zweiten Schlüssel. Der Mittelmann kann aber noch nicht die finale Nachricht entschlüsseln, da er den ursprüngliche Verschlüsselung noch nicht kennt.</p>
-        
-                    <button onclick="bicycle3()"; style="margin-left: 68%; margin-bottom: 0.5%;" ; class="waves-effect orange btn" ; id="buttonencrypt">Entschlüsseln</button>
-                    <div class="z-depth-4"; class="black-text"; id="smalllog3";></div>
-        
-                                                        
-                    <br/>
-                    <br/> 
-        
-                    <p class="black-text">Jetzt ist es ein leichtes, die Nachricht, die als letztes versendet wurde zu nehemn und durch den Schlüssel teilen.</p>
-                    <button onclick="bicycle6()"; style="margin-left: 68%; margin-bottom: 0.5%;" ; class="waves-effect orange btn" ; id="buttonencrypt">Entschlüsseln</button>
-                    <div class="z-depth-4"; class="black-text"; id="smalllog6";></div>
-        
-                    <br/>
-                    <br/>
-        
-                    <p class="black-text">Somit ist klar bewiesen, das diese Verschlüsslungsmethode wegfällt, da es ohne grossen Aufwand von einer unabhängigen Partei entschlüsselt werden kann.</p>
-        
-                    <br/>
-                    <br/>
-        
-                    <h3 class="black-text">Was kann man davon nutzen?</h3>
-                    <p class="black-text">Die Verschlüsselung ist nun wie bewiesen nicht nützlich, aber kann man etwas daraus rausziehen, das man für eine neue Verschlüsselungsmethode weiterverwenden können? <br/> Ja, definitiv. Es hat sehr gute Ansätze, hautsächlich nähmlich das die Schlüssel immer bei der Person bleiben und nie übertragen werden muss. Aber wie funktioniert eine Verschlüsselung, die auf dem gleichen Prinzip funktioniert, aber nicht die Schlüssel ohne weiters freigibt?</p>
-                    <p class="black-text">Die Grunsätzliche Idee ist auch für die modulare Arithmetik interessant, da sie auch darauf aufbaut, das beide einen privaten Schlüssel haben. OTP würde in diesem Setting aber nicht funktionieren, da sie darauf aufbaut, das der Schlüssel Eve nie erreicht, da sonst die ganze Verschlüsselung hinfällig ist.</p>
-        
+                    <div>
+                        <input type="text" name="lname" style="margin-left: 8%; width: 50%;" id="inputencrypt"
+                            placeholder="Zu verschlüsselnder Text">
+                        <input type="text" name="lname" style="width: 10%;" id="inputnumberencrypt"
+                            placeholder="Nummer">
+
+                        <button onclick="encrypt()" class="waves-effect orange btn"
+                            id="buttonencrypt">Verschlüsseln</button>
+
+                        <div class="z-depth-4 black-text" id="log"></div>
+                    </div>
+                    <h3 class="black-text">Sicher?</h3>
+                    <p class="black-text">Leider ist die Caesar verschlüsselung nicht sehr sicher und kann spätestens
+                        nach 26 versuchen entschlüsselt.</p>
+
+                    <div>
+                        <input type="text" name="lname" style="margin-left: 8%; width: 50%;" id="inputdecrypt"
+                            placeholder="Zu entschlüsselnder Text">
+
+                        <button onclick="decrypt()" class="waves-effect orange btn"
+                            id="buttonencrypt">Entschlüsseln</button>
+
+                        <div class="z-depth-4 black-text" id="log2"></div>
+                    </div>
+                    <h3 class="black-text">Beschleunigung</h3>
+                    <p class="black-text">Die entschlüsselung kann aber massiv beschleunigt werden, da es für jeden
+                        Buchstaben eine Häufigkeit hat, wie häufig er in einem Text vorkommt. Dies kann aber auch auf
+                        die verschlüsselte Version des Textes angewendet werden. So hat man bei längeren Texten eine
+                        sehr gute Wahrscheinlichkeit es beim ersten Versuch das ganze beim ersten Versuch lesbar zu
+                        entschlüsseln.</p>
                 </div>
+                <div class="card-panel white lighten-2 z-depth-4" id="oneTimePads">
+                    <h3 class="black-text">Was sind One Time Pads?</h3>
+                    <p class="black-text">Es ist ein systematisches Verschlüsselungsverfahren zur geheimen
+                        Nachrichtenübermittlung. Es wird ein Schlüssel verwendet, der so lang wie die Nachricht ist. Es
+                        gehört zu den polyalphabetischen Substitutionsverfahren, dass heisst ein Buchstabe (oder ein
+                        Zeichen) wird in einen anderen Buchstaben (oder Zeichen) umgewandelt.</p>
 
-                <div class="card-panel white lighten-2 z-depth-4" id="modulareArithmetik">
+                    <h3 class="black-text">Unter welchen Umständen sind sie perfekt sicher und wieso sind sie unter
+                        diesen Umständen perfekt sicher?</h3>
+                    <p class="black-text">Der Einmalschlüssel muss:
 
-                    <h3 class="black-text">Was ist modulare Arithmetik?</h3>
-                    <p class="black-text">Die Modulare Arithmetik beruht darauf, das man sich eine Primzahl sucht und mit dieser Zahl und einer Zahlenmenge von dieser Zahl - 1. Ich werde in den folgenden Teilen diese Zahl m nennen. Die grosse Frage ist ja aber, was ist modulo.</p>
+                        <ul class="collection" style="width: 50%;">
+                            <li class="collection-item black-text">mindestens so lang wie die Nachricht sein</li>
 
-                    <h3>Was ist modulo rechnen</h3>
-                    <p class="black-text">Modulo rechenen beschreibt das Rechnen mit Resten. So Wird beim dividieren einer Zahl keine Kommastellen angefangen sondern einfach der Rest Notiert. Dies ist auch das Resultat einer Modulo Rechnung. Die Notation einer modulo Rechnung wird in Programmiersprache mit einem Prozentzeichen angegeben. Beispiel: 7 % 3 = 1 <br>
-                    <p class="black-text">Die Notation in der Mathematik ist sehr àhnlich. Beispiel: 8mod3 = 2. Allerdings wird das Gleichheitszeichen häufig durch ein Kongruenzzeichen ersetzt. Die Schreibweise ist eigentlich ein Gleichheitszeichen, mit dem Unterschied, das es aus drei Strichen besteht.</p>
+                            <li class="collection-item black-text">geheim bleiben</li>
 
-                    <h3 class="black-text">Was kann man nun damit machen?</h3>
-                    <p class="black-text">Wir nehemen eine Primzahl m die möglichst gross ist, damit es viele Möglichkeiten gibt. Anschliessend definiert man eine Zahlenmengen Zm die von null bis m-1 geht. Anschliessend suchen wir eine Zahl x die möglichst viele Resultate produziert. Die Grösste Zahl die x sein kann ist m/2-1.</p>                   
-                
-                    <h3 class="black-text">Wieso sind modulo Primzahlen intersssant für die Verschlüsslung</h3>
-                    <p class="black-text">Wenn man die Nachricht mit dem Schlüssel entschlüsselt, und das ganze im Binärsystem macht, ist man spätestens nach 2r Multiplikationen fertog, wobei r die Anzahl der Binärziffern ist. Das Interessante das ganze im Binärsystem zu machen ist, das man die Quadrierungen zu Multiplikationen umwandeln kann.
+                            <li class="collection-item black-text">darf nicht wiederverwendet werden</li>
 
-                    <h3 class="black-text">Was ist ein Generator?</h3>  
-                    <p class="black-text">Der Generator ist die Zahl die deren alle Reste von Modulo abdecken.</p>                
-                </div>
+                            <li class="collection-item black-text">gleichverteilt zufällig gewählt werden</li>
 
-                <div class="card-panel white lighten-2 z-depth-4" id="diffieHellmann">
-
-                    <h3 class="black-text">Schematik  von Diffie-Hellmann</h3>
-                    <p class="black-text">Die Erzeugung des gemeinsamen Keys ist in der folgenden Tabelle schematisch dargestellt.</p>
-
-                    <table cellspacing="0" cellpadding="6" rules="groups" frame="hsides" style="background-color: white;">
-                        <colgroup>
-                            <col  class="org-left" />
-                            <col  class="org-left" />
-                            <col  class="org-left" />
-                            <col  class="org-left" />
-                            <col  class="org-left" />
-                            <col  class="org-left" />
-                            <col  class="org-left" />
-                        </colgroup>
-                            <thead>
-                            <tr>
-                                <th scope="col" class="org-left">&#xa0;</th>
-                                <th scope="col" class="org-left">Alice</th>
-                                <th scope="col" class="org-left">Eve</th>
-                                <th scope="col" class="org-left">Bob</th>
-                                <th scope="col" class="org-left">Inventar Alice</th>
-                                <th scope="col" class="org-left">Inventar Eve</th>
-                                <th scope="col" class="org-left">Inventar Bob</th>
-                            </tr>
-                            </thead>
-                        <tbody>
-                            <tr>
-                                <td class="org-left">publik uebertragen</td>
-                                <td class="org-left">g, p</td>
-                                <td class="org-left">&#x2014; g, p &#x2013;&gt;</td>
-                                <td class="org-left">g, p</td>
-                                <td class="org-left">g, p</td>
-                                <td class="org-left">g, p</td>
-                                <td class="org-left">g, p</td>
-                            </tr>
-                            <tr>
-                                <td class="org-left">privat generiert</td>
-                                <td class="org-left">a</td>
-                                <td class="org-left">&#xa0;</td>
-                                <td class="org-left">b</td>
-                                <td class="org-left">g, p, a</td>
-                                <td class="org-left">g, p</td>
-                                <td class="org-left">g, p, b</td>
-                            </tr>
-                            <tr>
-                                <td class="org-left">berechnen</td>
-                                <td class="org-left">g<sup>a</sup></td>
-                                <td class="org-left">&#xa0;</td>
-                                <td class="org-left">g<sup>b</sup></td>
-                                <td class="org-left">g, p, a / g<sup>a</sup></td>
-                                <td class="org-left">g, p</td>
-                                <td class="org-left">g, p, b / g<sup>b</sup></td>
-                            </tr>
-                            <tr>
-                                <td class="org-left">publik uebertragen</td>
-                                <td class="org-left">g<sup>a</sup></td>
-                                <td class="org-left">&#x2014; g<sup>a</sup> &#x2013;&gt;</td>
-                                <td class="org-left">g<sup>a</sup></td>
-                                <td class="org-left">g, p, a / g<sup>a</sup></td>
-                                <td class="org-left">g, p, g<sup>a</sup></td>
-                                <td class="org-left">g, p, a, g<sup>a</sup> / g<sup>b</sup></td>
-                            </tr>
-                            <tr>
-                                <td class="org-left">publik uebertragen</td>
-                                <td class="org-left">g<sup>b</sup></td>
-                                <td class="org-left">&lt;&#x2013; g<sup>b</sup> ---</td>
-                                <td class="org-left">g<sup>b</sup></td>
-                                <td class="org-left">g, p, a, g<sup>b</sup> / g<sup>a</sup></td>
-                                <td class="org-left">g, p, g<sup>a</sup>, g<sup>b</sup></td>
-                                <td class="org-left">g, p, a, g<sup>a</sup> / g<sup>b</sup></td>
-                            </tr>
-                            <tr>
-                                <td class="org-left">berechnen</td>
-                                <td class="org-left">(g<sup>b</sup>)<sup>a</sup></td>
-                                <td class="org-left">&#xa0;</td>
-                                <td class="org-left">(g<sup>a</sup>)<sup>b</sup></td>
-                                <td class="org-left">g, p, a, g<sup>b</sup>, g<sup>ba</sup></td>
-                                <td class="org-left">g, p, g<sup>a</sup>, g<sup>b</sup></td>
-                                <td class="org-left">g, p, a, g<sup>a</sup>, g<sup>ab</sup> / g<sup>b</sup></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p class="black-text">Zu erst generiert Alice einen Generator und eine Primzahl. Diese werden an Bob geschickt, aber Eve kann alle Daten abgreiffen.<br>
-                    Anschliessnd generieren beide einen zweiten Schlüssel und rechenen den Generator hoch ihren eigenen Schlüssel. Dann schickt Alice das Ergebnis ihrer Rechnung and Bob und auch hier kann Eve alles Abfangen. Genau das gleiche passiert jetzt mit den Daten von Bob<br>
-                    Jetzt können beide ihre erhaltenen Schlüssel hoch ihren ursprünglich privaten Schlüssel rechnen und beide besitzten den gleichen Schlüssel, der Eve nur mit viel mehr Rechenarbeit berechenen kann.</p>
-                </div>
-
-                <div class="card-panel white lighten-2 z-depth-4" id="elGamal">
-                    <h3 class="black-text">El Gamal</h3>
-                    <p>Die El Gamal verschlüsselung wurde von Taher Elgamal entwickelt und ist die Wahrscheinlich eines der einfachste möglichkeit eine Nachricht mit einem Schlüssel zu versehen.<br>
-                        Die Theorie besagt, das der Schlüssel mit der Nachricht und dem multiplikativen Inversen multipliziert wird.
+                            <li class="collection-item black-text">Es ist unmöglich den Schlüssel zu erraten oder zu
+                                erschliessen, da jeder mögliche Schlüssel mit der gleichen Wahrscheinlichkeit auftreten
+                                kann.</li>
+                        </ul>
                     </p>
-                    <h3 class="black-text">Das Multiplikative Inverse</h3>
-                    <p>Das multiplikative Invers bei der modularen Arithmetik ist ein Teil der Formel a &#215 a<sup>-1</sup> mod b = 1. Bei der Formel weiss man a und b. Es geht nun darum eine Zahl zu finden, die in der Formel eingesetzt, das neutrale Element der Multiplikation zu finden, die eins.</p>
+
+                    <p class="black-text">Hier ein Beispiel dazu:<br>
+                        Angenommen ‘A’ verschlüsselt die Nachricht “BADEN” mit dem Key “FVOYY”. Code:</p>
+
+                    <div class="z-depth-4" ; class="black-text" ; id="logCode" ;>
+                        alphabeth="ABCDEFGHIJKLMNOPQRSTUVWXYZ"<br>
+                        <br>
+                        def add_letter(letter_key , letter_plain):<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;new_letter_pos = alphabeth.find(letter_key) +
+                        alphabeth.find(letter_plain)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;if new_letter_pos > 25:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new_letter_pos = new_letter_pos - 26<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;new_letter = alphabeth[new_letter_pos]<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;return new_letter<br>
+                        <br>
+                        def add_strings(str_A, str_B):<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;result=""<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;for i in range(len(str_A)):<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result = result + add_letter(str_A[i],
+                        str_B[i])<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;return result<br> <br>
+                        plaintext = "BADEN"<br>
+                        key = "FVOYY"<br>
+                        add_strings(plaintext, key)<br>
+                    </div>
+                    <br />
+                    <samp class="black-text">Output: "GVRCL"</samp>
+                    <br />
+                    <input type="text" name="lname" style="margin-left: 8%; width: 30%;" id="inputOTP1"
+                        placeholder="Zu verschlüsselnder Text">
+                    <input type="text" name="lname" style="width: 30%;" id="inputOTP2"
+                        placeholder="Schlüssel mit gleicher Länge">
+                    <button onclick="add_strings()" class="waves-effect orange btn"
+                        id="buttonencrypt">Verschlüsseln</button>
+                    <div class="z-depth-4 black-text" id="smalllogOTP1"></div>
+                    <br />
+                    <p class="black-text">Die verschlüsselte Nachricht ‘GVRCL’ wird an Person ‘B’ geschickt, welcher den
+                        Schlüssel kennt und mit Python einfach entschlüsseln kann. Funktion:</p>
+
+                    <div class="z-depth-4 black-text" id="logCode">
+                        def subtr_strings(str_A , str_B):<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;result = ""<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;for i in range(len(str_A)):<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result = result + subtr_letter(str_A[i],
+                        str_B[i])<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;return result<br> <br>
+                        cipher = "GVRCL"<br>
+                        key = "OGDLS"<br>
+                        subtr_strings(cipher, key)<br>
+                    </div>
+                    <br>
+                    <samp class="black-text">Output: "BADEN"</samp>
+                    <br>
+                    <p class="black-text">Nachricht wird aber von einer Drittperson abgefangen, die den Schlüssel jedoch
+                        nicht kennt. Um den Text zu entschlüsseln, entschlüsselt sie ihn mit jedem möglichen
+                        Schlüssel.<br>
+                        Dabei gibt es 26<sup>5</sup>= 11 881 376 mögliche Schlüssel, also gibt es auch genauso viele
+                        Lösungen. Es gibt mehrere Lösungen die Sinn ergeben. Da die Drittperson auch nicht Weiss auf
+                        welcher Sprache die Nachricht geschrieben wurde, gibt es nur noch mehr Sinnvolle Lösungen. Sie
+                        benutzt den selben Python-Code wie Bob:</p>
+                    <div class="z-depth-4 black-text" id="logCode">
+                        subtr_strings(“GVRCL” , “LNOYX”)
+                    </div>
+                    <samp class="black-text">Output: "VIDEO"</samp>
+                    <br />
+                    <div class="z-depth-4 black-text" id="logCode">
+                        subtr_strings("GVRCL", "VRZYY")
+                    </div>
+                    <samp class="black-text">Output: "LESEN"</samp>
+                    <br />
+                    <p class="black-text">Wie man sieht kann die Drittperson nicht wissen welche Lösung jetzt
+                        richtig
+                        ist und somit ist OTP sicher.</p>
+
+                    <h3 class="black-text">Wieso ist ein mehrmals verwendeter Key nicht sicher?</h3>
+
+                    <p class="black-text">Wenn jetzt ‘A’ den gleichen Key ‘FVOYY’ nochmals verwendet, um zum
+                        Beispiel
+                        das Wort ‘SPORT’ zu verschlüsseln, kann die Drittperson die beiden Stings aneinanderhängen,
+                        bevor sie alle möglichen Schlüssel ausprobiert. Dadurch erhält sie weniger Lösungen die Sinn
+                        ergeben. Aus beiden Nachrichten kann also ein sinnvoller String entstehen, wodurch die
+                        Drittperson den Key finden kann und somit auch beide Nachrichten entschlüsseln kann. Die
+                        mehrfache Nutzung eines Schlüssels erlaubt also die vereinfachte Entschlüsselung -> nicht
+                        mehr
+                        sicher.</p>
                 </div>
+                <div class="z-depth-4 transparent" id="publicKeyCryptography">
+                    <div class="orange z-depth-4">
+                        <ul class="tabs">
+                            <li class="tab orange"><a class="active" href="#bycicle"
+                                    style="color: white;">Fahrradproblem</a></li>
+                            <li class="tab orange"><a href="#modulareArithmetik" style="color: white;">Modulare
+                                    Arithmetik</a></li>
+                            <li class="tab orange"><a href="#diffieHellmann" style="color: white;">Diffie-Hellmann</a>
+                            </li>
+                            <li class="tab orange"><a href="#elGamal" style="color: white;">El Gamal</a></li>
+                            <li class="tab orange"><a href="#rsa" style="color: white;">RSA</a></li>
+                        </ul>
+                    </div>
 
-                <div class="card-panel white lighten-2 z-depth-4" id="rsa">
-                    <h3 class="black-text">Das RSA verfahren</h3>
-                    <p class="black-text">Das RSA Verfahren ist Rechnerisch ein bisschen aufwändiger, aber formal einfacher.</p>
-                    <p class="black-text">Wenn Alice eine Nachricht an Bob senden möchte, so verschlüsselt sie die Nachricht mit seinem öffentlichen Schlüssel und nur Bob kann sie mit seinem privaten Schlüssel entschlüsseln. Das hat weitreichende Konsequenzen: Falls Alice eine Nachricht mit ihrem privaten Schlüssel verschlüsselt so kann jeder diese Nachricht mit ihrem öffentlichen Schlüssel entschlüsseln. Das sieht zunächst nicht besonders sinnvoll aus, aber es bedeutet, dass Alice ihre Nachricht digital unterschrieben hat: Jeder kann nachprüfen, dass nur sie diese Nachricht verschlüsselt haben kann.</p>
+                    <div class="card-panel white lighten-2 z-depth-4" id="bycicle">
+
+                        <h3 class="black-text">Wie kann man einem Fremden ein Fahrrad verkaufen ohne ihn jemals zu
+                            sehen?</h3>
+                        <p class="black-text">Man schliesst sein Fahrrad an einem neutralem Ort ab und geht weg.
+                            Anschliessend kommt die andere Person und schliesst das Velo zusätzlich mit seinem eigenen
+                            Schloss ab und geht wieder weg. Anschliessend geht der Verkäufer wieder zurück und entfernt
+                            sein Schloss. So hat der Käufer sein Fahrrad nur noch durch sein eigenes Schloss
+                            verschlossen.</p>
+                        <h3 class="black-text">Ist dies auch für die Kryptographie interessant?</h3>
+                        <p class="black-text">Die Antwort lautet nein. Das Problem liegt darin, das wenn man eine
+                            Nachricht verschlüsselt, sie and die andere Person verschlüsselt, sie die Nachricht
+                            zusätzlich verschlüsselt und wieder zurückschickt kann die "Man in the Middle"-Person den
+                            Key der zweiten Person herausfinden.</p>
+
+                        <p class="black-text">Bitte gib eine einen String mit maximal 6 kleingeschriebene Zeichen länge.
+                        </p>
+
+                        <input type="text" name="lname" style="margin-left: 8%; width: 50%;" id="inputencrypt1"
+                            placeholder="Zu verschlüsselnder Text">
+                        <input type="text" name="lname" style="width: 10%;" id="inputnumberencrypt1"
+                            placeholder="Nummer">
+                        <button onclick="bicycle()" class="waves-effect orange btn"
+                            id="buttonencrypt">Verschlüsseln</button>
+                        <div class="z-depth-4" class="black-text" id="smalllog"></div>
+
+                        <br />
+                        <br />
+
+
+                        <p class="black-text">Nun hat die erste Person die Nachricht verschlüsselt und reicht die
+                            Nachricht an die zwite Person weiter. Es gibt allerdings noch die Person in der Mitte, die
+                            auf keinen Umständen die Nachricht lesen sollte, aber sie fängt die erste Nachricht ab.</p>
+                        <p class="black-text">Anschliessend verschlüsselt Person 2 die Nachricht zusätzlich meit seinem
+                            Schlüssel und schickt es wieder zurück an Person 1. Aber auch diese Nachricht wird von der
+                            Person in der Mitte abgefangen.</p>
+                        <p class="black-text">Jetzt ist die Nachricht ja schon übermittelt und man muss nur noch einen
+                            zweiten Key generieren.</p>
+
+                        <input type="text" name="lname" style="width: 60%; margin-left: 8%;" id="inputnumberencrypt2"
+                            placeholder="2. Schlüssel">
+                        <button onclick="bicycle2()" class="waves-effect orange btn" id="buttonencrypt">2.
+                            Verschlüsseln</button>
+                        <div class="z-depth-4" class="black-text" id="smalllog2"></div>
+
+                        <br />
+                        <br />
+
+                        <p class="black-text">Nun teilt die erste Person die doppelt verschlüsselte Nachricht durch den
+                            eigenen Schlüssel und schickt die einfach verschlüsselte Nachricht zurück an die 2. Person.
+                            Natürlich wird diese Nachricht auch von einem Mittelmann abgefangen.</p>
+
+                        <button onclick="bicycle4()" style="margin-left: 68%; margin-bottom: 0.5%;"
+                            class="waves-effect orange btn" id="buttonencrypt">Entschlüsseln</button>
+                        <div class="z-depth-4" class="black-text" id="smalllog4"></div>
+
+
+                        <br />
+                        <br />
+
+                        <p class="black-text">Nun kommt der finale Schritt: Die zweite Person nimmt die erneut
+                            übermittelte Nachricht und teilt und es durch den eigenen Schlüssel. Somit bekommt die
+                            Person die Nachricht und sowohl der Schlüssel noch der unverschlüsselte Text übermittelt.
+                        </p>
+                        <button onclick="bicycle5()" style="margin-left: 68%; margin-bottom: 0.5%;"
+                            class="waves-effect orange btn" id="buttonencrypt">Entschlüsseln</button>
+                        <div class="z-depth-4" class="black-text" id="smalllog5"></div>
+
+
+                        <br />
+                        <br />
+
+                        <h3 class="black-text">Und wieso ist dies nicht gut?</h3>
+                        <p class="black-text">Jetzt hat aber die Person in der Mitte sowohl die einfachverschlüsselte
+                            Text, als auch den doppelt verschlüsselten Text. Wenn jetzt die Person in der Mitte den
+                            doppelt verschlüsselten Text, durch den einfachverschlüsselten Text teil, bekommt er den
+                            zweiten Schlüssel. Der Mittelmann kann aber noch nicht die finale Nachricht entschlüsseln,
+                            da er den ursprüngliche Verschlüsselung noch nicht kennt.</p>
+
+                        <button onclick="bicycle3()" style="margin-left: 68%; margin-bottom: 0.5%;"
+                            class="waves-effect orange btn" ; id="buttonencrypt">Entschlüsseln</button>
+                        <div class="z-depth-4" class="black-text" id="smalllog3"></div>
+
+
+                        <br />
+                        <br />
+
+                        <p class="black-text">Jetzt ist es ein leichtes, die Nachricht, die als letztes versendet wurde
+                            zu nehemn und durch den Schlüssel teilen.</p>
+                        <button onclick="bicycle6()" style="margin-left: 68%; margin-bottom: 0.5%;"
+                            class="waves-effect orange btn" id="buttonencrypt">Entschlüsseln</button>
+                        <div class="z-depth-4" class="black-text" id="smalllog6"></div>
+
+                        <br />
+                        <br />
+
+                        <p class="black-text">Somit ist klar bewiesen, das diese Verschlüsslungsmethode wegfällt, da es
+                            ohne grossen Aufwand von einer unabhängigen Partei entschlüsselt werden kann.</p>
+
+                        <br />
+                        <br />
+
+                        <h3 class="black-text">Was kann man davon nutzen?</h3>
+                        <p class="black-text">Die Verschlüsselung ist nun wie bewiesen nicht nützlich, aber kann man
+                            etwas daraus rausziehen, das man für eine neue Verschlüsselungsmethode weiterverwenden
+                            können? <br /> Ja, definitiv. Es hat sehr gute Ansätze, hautsächlich nähmlich das die
+                            Schlüssel immer bei der Person bleiben und nie übertragen werden muss. Aber wie funktioniert
+                            eine Verschlüsselung, die auf dem gleichen Prinzip funktioniert, aber nicht die Schlüssel
+                            ohne weiters freigibt?</p>
+                        <p class="black-text">Die Grunsätzliche Idee ist auch für die modulare Arithmetik interessant,
+                            da sie auch darauf aufbaut, das beide einen privaten Schlüssel haben. OTP würde in diesem
+                            Setting aber nicht funktionieren, da sie darauf aufbaut, das der Schlüssel Eve nie erreicht,
+                            da sonst die ganze Verschlüsselung hinfällig ist.</p>
+
+                    </div>
+
+                    <div class="card-panel white lighten-2 z-depth-4" id="modulareArithmetik">
+
+                        <h3 class="black-text">Was ist modulare Arithmetik?</h3>
+                        <p class="black-text">Die Modulare Arithmetik beruht darauf, das man sich eine Primzahl sucht
+                            und mit dieser Zahl und einer Zahlenmenge von dieser Zahl - 1. Ich werde in den folgenden
+                            Teilen diese Zahl m nennen. Die grosse Frage ist ja aber, was ist modulo.</p>
+
+                        <h3>Was ist modulo rechnen</h3>
+                        <p class="black-text">Modulo rechenen beschreibt das Rechnen mit Resten. So Wird beim dividieren
+                            einer Zahl keine Kommastellen angefangen sondern einfach der Rest Notiert. Dies ist auch das
+                            Resultat einer Modulo Rechnung. Die Notation einer modulo Rechnung wird in
+                            Programmiersprache mit einem Prozentzeichen angegeben. Beispiel: 7 % 3 = 1 <br>
+                            <p class="black-text">Die Notation in der Mathematik ist sehr àhnlich. Beispiel: 8mod3 = 2.
+                                Allerdings wird das Gleichheitszeichen häufig durch ein Kongruenzzeichen ersetzt. Die
+                                Schreibweise ist eigentlich ein Gleichheitszeichen, mit dem Unterschied, das es aus drei
+                                Strichen besteht.</p>
+
+                            <h3 class="black-text">Was kann man nun damit machen?</h3>
+                            <p class="black-text">Wir nehemen eine Primzahl m die möglichst gross ist, damit es viele
+                                Möglichkeiten gibt. Anschliessend definiert man eine Zahlenmengen Zm die von null bis
+                                m-1 geht. Anschliessend suchen wir eine Zahl x die möglichst viele Resultate produziert.
+                                Die Grösste Zahl die x sein kann ist m/2-1.</p>
+
+                            <h3 class="black-text">Wieso sind modulo Primzahlen intersssant für die Verschlüsslung</h3>
+                            <p class="black-text">Wenn man die Nachricht mit dem Schlüssel entschlüsselt, und das ganze
+                                im Binärsystem macht, ist man spätestens nach 2r Multiplikationen fertog, wobei r die
+                                Anzahl der Binärziffern ist. Das Interessante das ganze im Binärsystem zu machen ist,
+                                das man die Quadrierungen zu Multiplikationen umwandeln kann.
+
+                                <h3 class="black-text">Was ist ein Generator?</h3>
+                                <p class="black-text">Der Generator ist die Zahl die deren alle Reste von Modulo
+                                    abdecken.</p>
+                    </div>
+
+                    <div class="card-panel white lighten-2 z-depth-4" id="diffieHellmann">
+
+                        <h3 class="black-text">Schematik von Diffie-Hellmann</h3>
+                        <p class="black-text">Die Erzeugung des gemeinsamen Keys ist in der folgenden Tabelle
+                            schematisch dargestellt.</p>
+
+                        <table cellspacing="0" cellpadding="6" rules="groups" frame="hsides"
+                            style="background-color: white;">
+                            <colgroup>
+                                <col class="org-left" />
+                                <col class="org-left" />
+                                <col class="org-left" />
+                                <col class="org-left" />
+                                <col class="org-left" />
+                                <col class="org-left" />
+                                <col class="org-left" />
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="org-left">&#xa0;</th>
+                                    <th scope="col" class="org-left">Alice</th>
+                                    <th scope="col" class="org-left">Eve</th>
+                                    <th scope="col" class="org-left">Bob</th>
+                                    <th scope="col" class="org-left">Inventar Alice</th>
+                                    <th scope="col" class="org-left">Inventar Eve</th>
+                                    <th scope="col" class="org-left">Inventar Bob</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="org-left">publik uebertragen</td>
+                                    <td class="org-left">g, p</td>
+                                    <td class="org-left">&#x2014; g, p &#x2013;&gt;</td>
+                                    <td class="org-left">g, p</td>
+                                    <td class="org-left">g, p</td>
+                                    <td class="org-left">g, p</td>
+                                    <td class="org-left">g, p</td>
+                                </tr>
+                                <tr>
+                                    <td class="org-left">privat generiert</td>
+                                    <td class="org-left">a</td>
+                                    <td class="org-left">&#xa0;</td>
+                                    <td class="org-left">b</td>
+                                    <td class="org-left">g, p, a</td>
+                                    <td class="org-left">g, p</td>
+                                    <td class="org-left">g, p, b</td>
+                                </tr>
+                                <tr>
+                                    <td class="org-left">berechnen</td>
+                                    <td class="org-left">g<sup>a</sup></td>
+                                    <td class="org-left">&#xa0;</td>
+                                    <td class="org-left">g<sup>b</sup></td>
+                                    <td class="org-left">g, p, a / g<sup>a</sup></td>
+                                    <td class="org-left">g, p</td>
+                                    <td class="org-left">g, p, b / g<sup>b</sup></td>
+                                </tr>
+                                <tr>
+                                    <td class="org-left">publik uebertragen</td>
+                                    <td class="org-left">g<sup>a</sup></td>
+                                    <td class="org-left">&#x2014; g<sup>a</sup> &#x2013;&gt;</td>
+                                    <td class="org-left">g<sup>a</sup></td>
+                                    <td class="org-left">g, p, a / g<sup>a</sup></td>
+                                    <td class="org-left">g, p, g<sup>a</sup></td>
+                                    <td class="org-left">g, p, a, g<sup>a</sup> / g<sup>b</sup></td>
+                                </tr>
+                                <tr>
+                                    <td class="org-left">publik uebertragen</td>
+                                    <td class="org-left">g<sup>b</sup></td>
+                                    <td class="org-left">&lt;&#x2013; g<sup>b</sup> ---</td>
+                                    <td class="org-left">g<sup>b</sup></td>
+                                    <td class="org-left">g, p, a, g<sup>b</sup> / g<sup>a</sup></td>
+                                    <td class="org-left">g, p, g<sup>a</sup>, g<sup>b</sup></td>
+                                    <td class="org-left">g, p, a, g<sup>a</sup> / g<sup>b</sup></td>
+                                </tr>
+                                <tr>
+                                    <td class="org-left">berechnen</td>
+                                    <td class="org-left">(g<sup>b</sup>)<sup>a</sup></td>
+                                    <td class="org-left">&#xa0;</td>
+                                    <td class="org-left">(g<sup>a</sup>)<sup>b</sup></td>
+                                    <td class="org-left">g, p, a, g<sup>b</sup>, g<sup>ba</sup></td>
+                                    <td class="org-left">g, p, g<sup>a</sup>, g<sup>b</sup></td>
+                                    <td class="org-left">g, p, a, g<sup>a</sup>, g<sup>ab</sup> / g<sup>b</sup></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="black-text">Zu erst generiert Alice einen Generator und eine Primzahl. Diese werden an
+                            Bob geschickt, aber Eve kann alle Daten abgreiffen.<br>
+                            Anschliessnd generieren beide einen zweiten Schlüssel und rechenen den Generator hoch ihren
+                            eigenen Schlüssel. Dann schickt Alice das Ergebnis ihrer Rechnung and Bob und auch hier kann
+                            Eve alles Abfangen. Genau das gleiche passiert jetzt mit den Daten von Bob<br>
+                            Jetzt können beide ihre erhaltenen Schlüssel hoch ihren ursprünglich privaten Schlüssel
+                            rechnen und beide besitzten den gleichen Schlüssel, der Eve nur mit viel mehr Rechenarbeit
+                            berechenen kann.</p>
+                    </div>
+
+                    <div class="card-panel white lighten-2 z-depth-4" id="elGamal">
+                        <h3 class="black-text">El Gamal</h3>
+                        <p>Die El Gamal verschlüsselung wurde von Taher Elgamal entwickelt und ist die Wahrscheinlich
+                            eines der einfachste möglichkeit eine Nachricht mit einem Schlüssel zu versehen.<br>
+                            Die Theorie besagt, das der Schlüssel mit der Nachricht und dem multiplikativen Inversen
+                            multipliziert wird.
+                        </p>
+                        <h3 class="black-text">Das Multiplikative Inverse</h3>
+                        <p>Das multiplikative Invers bei der modularen Arithmetik ist ein Teil der Formel a &#215
+                            a<sup>-1</sup> mod b = 1. Bei der Formel weiss man a und b. Es geht nun darum eine Zahl zu
+                            finden, die in der Formel eingesetzt, das neutrale Element der Multiplikation zu finden, die
+                            eins.</p>
+                    </div>
+
+                    <div class="card-panel white lighten-2 z-depth-4" id="rsa">
+                        <h3 class="black-text">Das RSA verfahren</h3>
+                        <p class="black-text">Das RSA Verfahren ist Rechnerisch ein bisschen aufwändiger, aber formal
+                            einfacher.</p>
+                        <p class="black-text">Wenn Alice eine Nachricht an Bob senden möchte, so verschlüsselt sie die
+                            Nachricht mit seinem öffentlichen Schlüssel und nur Bob kann sie mit seinem privaten
+                            Schlüssel entschlüsseln. Das hat weitreichende Konsequenzen: Falls Alice eine Nachricht mit
+                            ihrem privaten Schlüssel verschlüsselt so kann jeder diese Nachricht mit ihrem öffentlichen
+                            Schlüssel entschlüsseln. Das sieht zunächst nicht besonders sinnvoll aus, aber es bedeutet,
+                            dass Alice ihre Nachricht digital unterschrieben hat: Jeder kann nachprüfen, dass nur sie
+                            diese Nachricht verschlüsselt haben kann.</p>
+                    </div>
                 </div>
-            </div> 
+                <div class="card-panel white lighten-2 z-depth-4" id="bitcoin">
 
+                    <h3 class="black-text">Welches Problem löst die Blockchain?</h3>
+                    <p class="black-text">Der Bitcoin, welche die erste Blockchain ist, wurde als digitales Geld
+                        entworfen. Da sie eine dezentrale Datenbank ist, kann sie in der Regel von jedem
+                        Netzwerkteilnehmer gespeichert werden. Zwischen den Teilnehmern im Netzwerk ermöglicht die
+                        Blockchain eine Peer-to-Peer-Zahlung.</p>
 
-            <div class="card-panel white lighten-2 z-depth-4" id="bitcoin">
+                    <h3 class="black-text">Aber was ist Peer-to-Peer?</h3>
+                    <p class="black-text">So werden Computernetzwerke bezeichnet, bei deren mehrere Computer miteinander
+                        verbunden sind und zusammenarbeiten können. Die Computer versorgen sich gegenseitig mit Dateien,
+                        Diensten und Funktionen. Die Computer können unterschiedlich aufgeteilt sein. Entweder können
+                        sie völlig gleichberechtigt oder in Gruppen mit unterschiedlichen Berechtigungen sein. So gibt
+                        es also keinen zentralen Server und ist somit ein dezentrales Netzwerk. Die Vorteile der
+                        dezentralen Netzwerke, also auch dem Peer-to-Peer-Netzwerk sind, dass sie weniger anfällig für
+                        Totalausfälle sind sowie ist es schwieriger, das Netzwerk durch externe Angriffe zu
+                        deaktivieren.</p>
 
-                <h3 class="black-text">Welches Problem löst die Blockchain?</h3>
-                <p class="black-text">Der Bitcoin, welche die erste Blockchain ist, wurde als digitales Geld entworfen. Da sie eine dezentrale Datenbank ist, kann sie in der Regel von jedem Netzwerkteilnehmer gespeichert werden. Zwischen den Teilnehmern im Netzwerk ermöglicht die Blockchain eine Peer-to-Peer-Zahlung.</p>
-                
-                <h3 class="black-text">Aber was ist Peer-to-Peer?</h3>
-                <p class="black-text">So werden Computernetzwerke bezeichnet, bei deren mehrere Computer miteinander verbunden sind und zusammenarbeiten können. Die Computer versorgen sich gegenseitig mit Dateien, Diensten und Funktionen. Die Computer können unterschiedlich aufgeteilt sein. Entweder können sie völlig gleichberechtigt oder in Gruppen mit unterschiedlichen Berechtigungen sein. So gibt es also keinen zentralen Server und ist somit ein dezentrales Netzwerk. Die Vorteile der dezentralen Netzwerke, also auch dem Peer-to-Peer-Netzwerk sind, dass sie weniger anfällig für Totalausfälle sind sowie ist es schwieriger, das Netzwerk durch externe Angriffe zu deaktivieren.</p>
-    
-                <img src="pictures/bitcoin1.png" style="width: 60%;">
-    
-                <p class="black-text">Die mobilen Zahlungen über das Smartphone sind also Peer-to-Peer-Zahlungen. Konkret geht es um den sofortigen Transfer meist kleinerer Beträge, von Privatperson zu Privatperson, von Handy zu Handy. Zum Beispiel innerhalb des Freundeskreises oder in der Familie.
-                Doch dies war bisher nicht möglich. Wenn sich Menschen gegenseitig nicht vertrauen, lassen sie sich wichtige Vereinbarungen von einer dritten Partei bestätigen. Als Beispiel dafür gilt das Banksystem. Bei einer Transaktion von A nach B, zieht die Bank den Betrag vom Konto von A ab und addiert ihn auf das Konto von B. Doch dies funktioniert nur, wenn die Beteiligten sich auf die Bank verlassen. Sobald die Bank in Konkurs geht oder gehackt wird, kann man sich nicht mehr darauf verlassen, dass bei den richtigen das Geld abgezogen und bei den richtigen das Geld addiert wird. 
-                Bei den Bitcoins jedoch, wenn sie Bitcoins und die privaten Schlüssel haben, ist das Kapital allein ihres. Für die Ausführung von Transaktionen sind spezielle Netzwerkknoten verantwortlich. Diese Aufgabe kann von jedem übernommen werden. Wenn einer dieser Knoten ausfällt und aus irgendwelchen Gründen eine Transaktion nicht ausführen kann, kann diese Aufgabe von jedem übernommen werden. 
-                So kann also die Blockchain mächtige Dritte eliminieren. Ein blindes Vertrauen ist unnötig und der Benutzer hat die volle Kontrolle. 
-                Diese vertrauens-unabhängige Darstellung des Eigentums kann nicht nur auf Geld angewendet werden. Über die Blockchain können so genannte Token übertragen werden. Ähnlich wie Aktien, die nur ein Stück Papier sind, aber einen Teil eines Unternehmens repräsentieren, können Token alles repräsentieren.</p>
-                
-                <h3 class="black-text">Was ist eine Hash-Funktion?</h3>
-                <p class="black-text">Hash-Funktionen sind ein wichtiges kryptographisches Instrument und bilden einen eigenen Bereich in der Kryptographie.
-                Eine Dualzahl aus einem als Vorabbild bezeichneten Datensatz wird im Prinzip durch eine Hash-Funktion erzeugt, welche üblicherweise in hexadezimaler Notation dargestellt wird. Dies wird als Hash-Wert bezeichnet. Wie lange diese generierte Zeichenkette dann ist, hängt allein von der Hashfunktion ab. 
-                Die Besonderheit einer kryptographischen Hash-Funktion ist die Einwegfunktion. Sie ist sehr einfach zu berechnen, allerdings ist die Umkehrung sehr komplex und grundsätzlich unmöglich. Dies kann auch wieder mit dem Fingerabdruck von einem Menschen verglichen werden. Das Aussehen eines Menschen ist nicht durch ihren Fingerabdruck ableitbar. Auch wenn zwei Menschen sich ähnlichsehen, können sie einen komplett anderen Fingerabdruck haben. Die Umkehrung vom Hash-Wert in das Originalbild soll verhindert werden. 
-                <img src="pictures/bitcoin2.png" style="width: 80%;"> <br>
-                Mit Hashfunktionen kann man effizient Daten miteinander vergleichen, genauso wie man zwei Menschen mit ihrem Fingerabdruck vergleichen kann.</p>
-                
-                <h3 class="black-text">Doch wie funktioniert die Blockchain?</h3>
-                <p class="black-text">In einem Block werden die Daten einer Transaktion (es muss sich dabei nicht um Geld handeln) zusammengefasst. Um zu verhindern, dass die gleichen Bitcoins zweimal ausgegeben werden, müssen die Computerserver im Netzwerk sich einigen, dass die Transaktion gültig ist. Nur wenn die Transaktion gültig ist wird ein neuer Block (Transaktionsblock der Kette) an Blöcke (also die Blockchain) angehängt. Sobald dieser Schritt gemacht wurde, kann er nicht mehr rückgängig gemacht werden.</p>
-    
-                <img src="pictures/bitcoin3.png" style="width: 40%;">
-    
-                <p class="black-text">Dies kann man mit einem Gruppenchat vergleichen;
-                Alice, Bob und Lisa haben sich zusammen um 14:00 Uhr im Park verabredet. Diese Information ist nun nach dem Absenden auf jedem Handy im Chat gespeichert. Wenn Lisa sich aber erst um 16:00 Uhr im Park treffen möchte, kann sie diese Entscheidung nicht allein treffen und sie kann auch nicht im Chat die Nachricht nachträglich ändern. Wenn Lisa das also nicht mit den anderen von vorne plant, steht sie um 16:00 Uhr allein im Park. Dies ist gleich mit den Blockchains. Der Kern der Blockchain ist, dass niemand nachträglich noch etwas bearbeiten kann. Den in der Blockchain werden auch Information in einem Verlauf gespeichert, welche dann je einen Block darstellt. Für jeden Block wird ein Hash, also sozusagen ein digitaler Fingerabdruck berechnet. Jeder Block erhält auch den Hash des vorherigen Blockes. Die Blöcke werden über die Hashes zu einer Kette verbunden. Da diese Hashes nicht rückgängig gemacht werden können, ist es ähnlich wie bei einem Chatverlauf, wo man die Informationen nachher nicht mehr verändern kann.</p>
-    
-                <p class="black-text">Würde sich jetzt jedoch eine Information/ Block verändern, würde sich auch der dazugehörige Hash verändern und die Kette/ Blockchain würde Zerfallen.</p>
-                
-                <h3 class="black-text">Was sind smart contracts?</h3>
-                <p class="black-text">Selbstausführende Verträge, welche auf Computerprotokollen aufbauen, werden smart contracts (intelligente Verträge) genannt. Sie sind auf der Blockchain-Technologie aufgebaut und sozusagen digitale Verträge. Die Bedingungen der Vereinbarung zwischen Käufer und Verkäufer dieser Verträge wird direkt in Codezeilen geschrieben, welche über ein verteiltes, dezentrales Netzwerk bestehen. Die smart contracts machen alle Transaktionen nachvollziehbar, irreversibel und transparent.</p>
-                <p class="black-text">Doch wie funktioniert diese smart contracts?</p>
-                <p class="black-text">Bei einem normalen Vertrag müssen beide Parteien mit dem Vertrag einverstanden sein. Wenn Bob also ein neues Auto kaufen will, stehen im Kaufvertrag alle Bedingungen, welchen Bob zustimmen muss, um das Auto zu kaufen. Jedoch muss auch der Autoverkäufer diesen Bedingungen zustimmen. Im Vertrag sind auch die Informationen enthalten, wieviel Bob für das Auto zahlen muss und was er dafür bekommt. Diese Verträge sind üblich nicht digital und werden schriftlich ausformuliert. 
-                Die smart contracts enthalten die gleichen Informationen wie die normalen Verträge, mit dem Unterschied, dass die Vertragsinformationen im Programmcode des smart contracts festgelegt werden. Der Grundsatz «Code is law» gilt dabei. Der Autoverkäufer kann also zum Beispiel durch ein solcher smart contract festlegen, dass Bob das Auto erhält, wenn er einen bestimmten Betrag bezahlt hat. Sie erhaten also sogenannte Wenn-Dann-Regeln. Wenn de Bedingung, welche im Vertrag festgelegt wurde, erfüllt wurde, löst dies automatisch Konsequenzen aus. Das bedeutet, dass festgelegte Aktivitäten, um die Willensbekundung des Vertrages zu verwirklicheen, automatisch ausgeführt werden, wenn ein gefordertes Ereignis eintritt. Auch werden bei alle Statusänderungen alle Parteien in Echtzeit darüber informiert. 
-                Einige Vorteile eines smart contracts sind also beispielsweise, dass sie sehr verlässlich sind, wenn sie korrekt programmiert wurden. Auch sind sie sehr sicher, wenn sie auf Basis einer Blockchain programmiert wurden. Sie benötigt auch weniger Zeit, so sparen die Vertragspartner an Zeit und Geld. Zur Verifikation eines Vertrages dient die unveränderliche Blockchain. Somit ist ein smart contract unabhängig und benötigt keine Dritt-Partei. 
-                Jedoch gibt es auch Nachteile, den vollständig ausgereift ist das Konzept der digitalen Verträge noch nicht. Wenn beispielsweise der Programmcode fehlerhaft ist, kann dies schwerwiegende Folgen haben, da die Blockchain unveränderlich ist. So konnte ein Hacker am 17. Juni 2016 50 Millionen US-Dollar erbeuten.</p>
-    
-                <img src="pictures/bitcoin5.png" style="width: 50%;"><br>
-    
-                <a href="downloads/Quellen.org" download target="_blank">
-                    Quellen herunterladen
-                </a>
+                    <img src="pictures/bitcoin1.png" style="width: 60%;">
+
+                    <p class="black-text">Die mobilen Zahlungen über das Smartphone sind also Peer-to-Peer-Zahlungen.
+                        Konkret geht es um den sofortigen Transfer meist kleinerer Beträge, von Privatperson zu
+                        Privatperson, von Handy zu Handy. Zum Beispiel innerhalb des Freundeskreises oder in der
+                        Familie.
+                        Doch dies war bisher nicht möglich. Wenn sich Menschen gegenseitig nicht vertrauen, lassen sie
+                        sich wichtige Vereinbarungen von einer dritten Partei bestätigen. Als Beispiel dafür gilt das
+                        Banksystem. Bei einer Transaktion von A nach B, zieht die Bank den Betrag vom Konto von A ab und
+                        addiert ihn auf das Konto von B. Doch dies funktioniert nur, wenn die Beteiligten sich auf die
+                        Bank verlassen. Sobald die Bank in Konkurs geht oder gehackt wird, kann man sich nicht mehr
+                        darauf verlassen, dass bei den richtigen das Geld abgezogen und bei den richtigen das Geld
+                        addiert wird.
+                        Bei den Bitcoins jedoch, wenn sie Bitcoins und die privaten Schlüssel haben, ist das Kapital
+                        allein ihres. Für die Ausführung von Transaktionen sind spezielle Netzwerkknoten verantwortlich.
+                        Diese Aufgabe kann von jedem übernommen werden. Wenn einer dieser Knoten ausfällt und aus
+                        irgendwelchen Gründen eine Transaktion nicht ausführen kann, kann diese Aufgabe von jedem
+                        übernommen werden.
+                        So kann also die Blockchain mächtige Dritte eliminieren. Ein blindes Vertrauen ist unnötig und
+                        der Benutzer hat die volle Kontrolle.
+                        Diese vertrauens-unabhängige Darstellung des Eigentums kann nicht nur auf Geld angewendet
+                        werden. Über die Blockchain können so genannte Token übertragen werden. Ähnlich wie Aktien, die
+                        nur ein Stück Papier sind, aber einen Teil eines Unternehmens repräsentieren, können Token alles
+                        repräsentieren.</p>
+
+                    <h3 class="black-text">Was ist eine Hash-Funktion?</h3>
+                    <p class="black-text">Hash-Funktionen sind ein wichtiges kryptographisches Instrument und bilden
+                        einen eigenen Bereich in der Kryptographie.
+                        Eine Dualzahl aus einem als Vorabbild bezeichneten Datensatz wird im Prinzip durch eine
+                        Hash-Funktion erzeugt, welche üblicherweise in hexadezimaler Notation dargestellt wird. Dies
+                        wird als Hash-Wert bezeichnet. Wie lange diese generierte Zeichenkette dann ist, hängt allein
+                        von der Hashfunktion ab.
+                        Die Besonderheit einer kryptographischen Hash-Funktion ist die Einwegfunktion. Sie ist sehr
+                        einfach zu berechnen, allerdings ist die Umkehrung sehr komplex und grundsätzlich unmöglich.
+                        Dies kann auch wieder mit dem Fingerabdruck von einem Menschen verglichen werden. Das Aussehen
+                        eines Menschen ist nicht durch ihren Fingerabdruck ableitbar. Auch wenn zwei Menschen sich
+                        ähnlichsehen, können sie einen komplett anderen Fingerabdruck haben. Die Umkehrung vom Hash-Wert
+                        in das Originalbild soll verhindert werden.
+                        <img src="pictures/bitcoin2.png" style="width: 80%;"> <br>
+                        Mit Hashfunktionen kann man effizient Daten miteinander vergleichen, genauso wie man zwei
+                        Menschen mit ihrem Fingerabdruck vergleichen kann.</p>
+
+                    <h3 class="black-text">Doch wie funktioniert die Blockchain?</h3>
+                    <p class="black-text">In einem Block werden die Daten einer Transaktion (es muss sich dabei nicht um
+                        Geld handeln) zusammengefasst. Um zu verhindern, dass die gleichen Bitcoins zweimal ausgegeben
+                        werden, müssen die Computerserver im Netzwerk sich einigen, dass die Transaktion gültig ist. Nur
+                        wenn die Transaktion gültig ist wird ein neuer Block (Transaktionsblock der Kette) an Blöcke
+                        (also die Blockchain) angehängt. Sobald dieser Schritt gemacht wurde, kann er nicht mehr
+                        rückgängig gemacht werden.</p>
+
+                    <img src="pictures/bitcoin3.png" style="width: 40%;">
+
+                    <p class="black-text">Dies kann man mit einem Gruppenchat vergleichen:
+                        Alice, Bob und Lisa haben sich zusammen um 14:00 Uhr im Park verabredet. Diese Information ist
+                        nun nach dem Absenden auf jedem Handy im Chat gespeichert. Wenn Lisa sich aber erst um 16:00 Uhr
+                        im Park treffen möchte, kann sie diese Entscheidung nicht allein treffen und sie kann auch nicht
+                        im Chat die Nachricht nachträglich ändern. Wenn Lisa das also nicht mit den anderen von vorne
+                        plant, steht sie um 16:00 Uhr allein im Park. Dies ist gleich mit den Blockchains. Der Kern der
+                        Blockchain ist, dass niemand nachträglich noch etwas bearbeiten kann. Den in der Blockchain
+                        werden auch Information in einem Verlauf gespeichert, welche dann je einen Block darstellt. Für
+                        jeden Block wird ein Hash, also sozusagen ein digitaler Fingerabdruck berechnet. Jeder Block
+                        erhält auch den Hash des vorherigen Blockes. Die Blöcke werden über die Hashes zu einer Kette
+                        verbunden. Da diese Hashes nicht rückgängig gemacht werden können, ist es ähnlich wie bei einem
+                        Chatverlauf, wo man die Informationen nachher nicht mehr verändern kann.</p>
+
+                    <p class="black-text">Würde sich jetzt jedoch eine Information/ Block verändern, würde sich auch der
+                        dazugehörige Hash verändern und die Kette/ Blockchain würde Zerfallen.</p>
+
+                    <h3 class="black-text">Was sind smart contracts?</h3>
+                    <p class="black-text">Selbstausführende Verträge, welche auf Computerprotokollen aufbauen, werden
+                        smart contracts (intelligente Verträge) genannt. Sie sind auf der Blockchain-Technologie
+                        aufgebaut und sozusagen digitale Verträge. Die Bedingungen der Vereinbarung zwischen Käufer und
+                        Verkäufer dieser Verträge wird direkt in Codezeilen geschrieben, welche über ein verteiltes,
+                        dezentrales Netzwerk bestehen. Die smart contracts machen alle Transaktionen nachvollziehbar,
+                        irreversibel und transparent.</p>
+                    <p class="black-text">Doch wie funktioniert diese smart contracts?</p>
+                    <p class="black-text">Bei einem normalen Vertrag müssen beide Parteien mit dem Vertrag einverstanden
+                        sein. Wenn Bob also ein neues Auto kaufen will, stehen im Kaufvertrag alle Bedingungen, welchen
+                        Bob zustimmen muss, um das Auto zu kaufen. Jedoch muss auch der Autoverkäufer diesen Bedingungen
+                        zustimmen. Im Vertrag sind auch die Informationen enthalten, wieviel Bob für das Auto zahlen
+                        muss und was er dafür bekommt. Diese Verträge sind üblich nicht digital und werden schriftlich
+                        ausformuliert.
+                        Die smart contracts enthalten die gleichen Informationen wie die normalen Verträge, mit dem
+                        Unterschied, dass die Vertragsinformationen im Programmcode des smart contracts festgelegt
+                        werden. Der Grundsatz «Code is law» gilt dabei. Der Autoverkäufer kann also zum Beispiel durch
+                        ein solcher smart contract festlegen, dass Bob das Auto erhält, wenn er einen bestimmten Betrag
+                        bezahlt hat. Sie erhaten also sogenannte Wenn-Dann-Regeln. Wenn de Bedingung, welche im Vertrag
+                        festgelegt wurde, erfüllt wurde, löst dies automatisch Konsequenzen aus. Das bedeutet, dass
+                        festgelegte Aktivitäten, um die Willensbekundung des Vertrages zu verwirklicheen, automatisch
+                        ausgeführt werden, wenn ein gefordertes Ereignis eintritt. Auch werden bei alle Statusänderungen
+                        alle Parteien in Echtzeit darüber informiert.
+                        Einige Vorteile eines smart contracts sind also beispielsweise, dass sie sehr verlässlich sind,
+                        wenn sie korrekt programmiert wurden. Auch sind sie sehr sicher, wenn sie auf Basis einer
+                        Blockchain programmiert wurden. Sie benötigt auch weniger Zeit, so sparen die Vertragspartner an
+                        Zeit und Geld. Zur Verifikation eines Vertrages dient die unveränderliche Blockchain. Somit ist
+                        ein smart contract unabhängig und benötigt keine Dritt-Partei.
+                        Jedoch gibt es auch Nachteile, den vollständig ausgereift ist das Konzept der digitalen Verträge
+                        noch nicht. Wenn beispielsweise der Programmcode fehlerhaft ist, kann dies schwerwiegende Folgen
+                        haben, da die Blockchain unveränderlich ist. So konnte ein Hacker am 17. Juni 2016 50 Millionen
+                        US-Dollar erbeuten.</p>
+
+                    <img src="pictures/bitcoin5.png" style="width: 50%;"><br>
+
+                    <a href="downloads/Quellen.org" download target="_blank">
+                        Quellen herunterladen
+                    </a>
+                </div>
             </div>
+    </center>
+    <div class="card-panel orange z-depth-4">
+        <center>
+            <p class="white-text">Created by Arianita Nuhiu, Anja Kyra Meyner and Dominik Keller</p>
+            <p class="white-text">Copyright belongs to Arianita Nuhiu, Anja Kyra Meyner and Dominik Keller</p>
+            <a class="white-text" href="https://github.com/Domse007/CheatSheet"><u>Github Repository</u></a>
+        </center>
+    </div>
+</body>
 
-
-
-
-
-
-
-        </div>
-      
-                        
-        <div class="card-panel orange z-depth-4">
-            <center>
-                <p class="white-text">Created by Arianita Nuhiu, Anja Kyra Meyner and Dominik Keller</p>
-                <p class="white-text">Copyright belongs to Arianita Nuhiu, Anja Kyra Meyner and Dominik Keller</p>
-                <a class="white-text"; href="https://github.com/Domse007/CheatSheet"><u>Github Repository</u></a>
-            </center>
-        </div>
-   </body>
 </html>
