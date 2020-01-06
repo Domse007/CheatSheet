@@ -1,10 +1,8 @@
-var str_A; 
-
 function add_strings() {
 
     alphabeth = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-    str_A = document.getElementById("inputOTP1").value;
+    var str_A = document.getElementById("inputOTP1").value;
     var str_B = document.getElementById("inputOTP2").value;
 
     str_A = str_A.toUpperCase();
