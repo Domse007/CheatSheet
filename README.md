@@ -1,6 +1,6 @@
 # CheatSheet
 A web based cheatsheet about different encryption algorithms. It is about the simple Algorithms. Complex ones like AES are not covered on this website.
-(https://domse007.github.io/CheatSheet/ "Hosted here")
+[Link](https://domse007.github.io/CheatSheet/ "Hosted here")
 
 # Base
 The whole site is based on html/css with some features written in JavaScript.
